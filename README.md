@@ -1,15 +1,15 @@
-# yiai-ui
+# yi-ui
 
 a lightweight ui component for vue2.0
 ## Setup
 ```
-npm i yiai-ui
+npm i yi-ui
 ```
 
 ## Usage
 
 ``` js
-import YIUI from 'yiai-ui'
+import YIUI from 'yi-ui'
 Vue.use(YIUI)
 ```
 
