@@ -1,0 +1,43 @@
+$content-width: 1200px;
+$component-height: 32px;
+
+$white: #ffffff;
+$black: #000000;
+$primary-color: #337EFF;    // 主颜色
+$border-color: #E6E6EB;     // 边框颜色
+$disabled-color: #c4ccd8;   // 禁用颜色
+$input-color: #333333;      // input输入框颜色
+$tip-color: #CCCCCC;        // input 提示字符颜色
+$success-color: #189971;    // toast成功颜色
+$error-color: #F24957;      // toast失败颜色
+
+$font-family-medium: 'PingFangSC-Medium', Helvetica, Tahoma, Arial, 'Microsoft YaHei',
+    'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+$font-family-regular: 'PingFangSC-Regular', Helvetica, Tahoma, Arial, 'Microsoft YaHei',
+    'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+
+@mixin font-class($fontFamily, $fontSize, $fontColor, $isBold) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    @if $isBold {
+        font-weight: bold;
+    }
+    color: $fontColor;
+    letter-spacing: 0;
+}
+
+@mixin font-large($size: 14px, $color: $white, $isBlod: false) {
+    @include font-class($font-family-medium, $size, $color, $isBlod);
+}
+
+@mixin font-normal($size: 14px, $color: $white, $isBlod: false) {
+    @include font-class($font-family-regular, $size, $color, $isBlod);
+}
+
+// 居中
+@mixin center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
