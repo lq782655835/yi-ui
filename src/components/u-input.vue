@@ -1,13 +1,23 @@
 <template>
-    <div :class="['u-input', {'textarea': isTextArea}]" v-bind="$attrs">
-        <input v-if="!isTextArea"
-            v-model="inputValue" v-bind="$attrs"
-            v-on="listeners" @input="onInput"
-            :disabled="disabled" class="input" />
-        <textarea v-else 
-            v-model="inputValue" v-bind="$attrs"
-            v-on="listeners" @input="onInput"
-            :disabled="disabled" class="input" />
+    <div :class="['u-input', { textarea: isTextArea }]" v-bind="$attrs">
+        <input
+            v-if="!isTextArea"
+            v-model="inputValue"
+            v-bind="$attrs"
+            v-on="listeners"
+            @input="onInput"
+            :disabled="disabled"
+            class="input"
+        />
+        <textarea
+            v-else
+            v-model="inputValue"
+            v-bind="$attrs"
+            v-on="listeners"
+            @input="onInput"
+            :disabled="disabled"
+            class="input"
+        />
     </div>
 </template>
 
@@ -46,7 +56,6 @@ export default {
     }
 }
 </script>
-
 
 <style lang="scss" scoped>
 .u-input {

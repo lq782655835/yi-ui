@@ -1,7 +1,6 @@
 <template>
     <div class="u-checkbox" :disabled="disabled" @click="check">
-        <input type="checkbox" :checked="isCheck" :disabled="disabled" />
-        <slot>{{label}}</slot>
+        <input type="checkbox" :checked="isCheck" :disabled="disabled" /> <slot>{{ label }}</slot>
     </div>
 </template>
 

@@ -1,7 +1,5 @@
 <template>
-    <div v-show="show">
-        <slot></slot>
-    </div>
+    <div v-show="show"><slot></slot></div>
 </template>
 
 <script>
@@ -40,5 +38,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

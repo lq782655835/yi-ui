@@ -2,13 +2,18 @@
     <table class="u-table" :class="{ auto }">
         <thead>
             <tr>
-                <th v-for="(column,index) in columns" :style="column.style" :key="index">
-                    <span type="7" >{{column.label}}</span>
+                <th v-for="(column, index) in columns" :style="column.style" :key="index">
+                    <span type="7">{{ column.label }}</span>
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(row,index) in list" :key="index" @click="rowItemClick(row, index, $event)" class="ai-table-content ai-table-row">
+            <tr
+                v-for="(row, index) in list"
+                :key="index"
+                @click="rowItemClick(row, index, $event)"
+                class="ai-table-content ai-table-row"
+            >
                 <slot :row="row" :rowIndex="index" />
             </tr>
         </tbody>

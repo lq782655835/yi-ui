@@ -1,14 +1,25 @@
 <template>
-  <li class="u-tree">
-    <span v-if="isFolder" @click="toggle">{{ open ? '-' : '+' }}</span>
-  	<div @click.stop="select(data, $event)" @blur="unselect" tabIndex="0" class="text" :class="{selected}">
-        {{ data[labelField] }}
-    </div>
-    <ul class="tree-list" v-if="open">
-    	<u-tree v-for="(child, index) in data.children" :key="index"
-            :data="child" :labelField="labelField" @select="select" />
-    </ul>
-  </li>
+    <li class="u-tree">
+        <span v-if="isFolder" @click="toggle">{{ open ? '-' : '+' }}</span>
+        <div
+            @click.stop="select(data, $event)"
+            @blur="unselect"
+            tabIndex="0"
+            class="text"
+            :class="{ selected }"
+        >
+            {{ data[labelField] }}
+        </div>
+        <ul class="tree-list" v-if="open">
+            <u-tree
+                v-for="(child, index) in data.children"
+                :key="index"
+                :data="child"
+                :labelField="labelField"
+                @select="select"
+            />
+        </ul>
+    </li>
 </template>
 <script>
 export default {

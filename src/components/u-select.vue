@@ -1,13 +1,16 @@
 <template>
     <div class="u-select" :disabled="disabled" tabIndex="0" @blur="open = false">
         <div @click.stop="clickInput" class="label">
-            {{ selectedItem.label || '请选择' }}
-            <i :class="['arrow', open ? 'up' : 'down']"/>
+            {{ selectedItem.label || '请选择' }} <i :class="['arrow', open ? 'up' : 'down']" />
         </div>
         <div v-if="open" class="options">
-            <div v-for="(item, index) in formatList" :key="index"
-            :title="item.label" @click="selectItem(item)"
-            :class="['option', { 'seleced': item.label == selectedItem.label }]" >
+            <div
+                v-for="(item, index) in formatList"
+                :key="index"
+                :title="item.label"
+                @click="selectItem(item)"
+                :class="['option', { seleced: item.label == selectedItem.label }]"
+            >
                 {{ item.label }}
             </div>
         </div>

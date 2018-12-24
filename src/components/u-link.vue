@@ -57,5 +57,9 @@ export default {
     cursor: pointer;
     outline: none;
     color: inherit;
+
+    &[color='primary'] {
+        color: $primary-color;
+    }
 }
 </style>

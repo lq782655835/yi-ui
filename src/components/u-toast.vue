@@ -1,8 +1,7 @@
 <template>
     <div v-if="showToast" class="u-toast">
         <div class="content">
-            <span :class="[ 'icon', type ]">!</span>
-            <span :class="[ 'text', type ]">{{ text }}</span>
+            <span :class="['icon', type]">!</span> <span :class="['text', type]">{{ text }}</span>
         </div>
     </div>
 </template>
@@ -13,7 +12,11 @@ import Vue from 'vue'
 const Toast = {
     props: {
         text: { type: String, default: '' },
-        type: { type: String, default: 'success', validator: value => ['success', 'error'].indexOf(value) !== -1 }
+        type: {
+            type: String,
+            default: 'success',
+            validator: value => ['success', 'error'].indexOf(value) !== -1
+        }
     },
     data() {
         return {
@@ -39,11 +42,13 @@ const Toast = {
     }
 }
 
-Vue.nextTick(() => {
+Toast.toast = (...options) => {
     const Ctor = Vue.component('u-toast')
+    console.log(Ctor, 123)
     if (!Ctor) return
-    Vue.prototype.$toast = new Ctor()
-})
+    let instance = new Ctor()
+    instance.show(...options)
+}
 export default Toast
 </script>
 

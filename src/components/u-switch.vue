@@ -1,6 +1,14 @@
 <template>
-    <label class="u-switch" :checked="currentValue" :disabled="disabled" tabindex="0"
-         @click="toggle()" @keyup.space.prevent="toggle()" @keydown.space.prevent v-on="$listeners">
+    <label
+        class="u-switch"
+        :checked="currentValue"
+        :disabled="disabled"
+        tabindex="0"
+        @click="toggle()"
+        @keyup.space.prevent="toggle()"
+        @keydown.space.prevent
+        v-on="$listeners"
+    >
         <span class="button"></span>
     </label>
 </template>

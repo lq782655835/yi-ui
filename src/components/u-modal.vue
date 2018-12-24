@@ -1,10 +1,17 @@
 <template>
-    <div v-if="currentVisible" @click="maskClosable && cancel()" @keydown.esc="cancel()" class="u-modal-wapper" >
-        <div v-bind="$attrs" v-on="$listeners" @click.stop :class="type" class="u-modal" >
+    <div
+        v-if="currentVisible"
+        @click="maskClosable && cancel()"
+        @keydown.esc="cancel()"
+        class="u-modal-wapper"
+    >
+        <div v-bind="$attrs" v-on="$listeners" @click.stop :class="type" class="u-modal">
             <!-- 标题区 -->
             <div v-if="title" class="u-modal-head">
                 <slot name="head">
-                    <div class="title"><slot name="title">{{ title }}</slot></div>
+                    <div class="title">
+                        <slot name="title">{{ title }}</slot>
+                    </div>
                 </slot>
             </div>
             <!-- 内容区 -->
@@ -14,9 +21,14 @@
             <!-- 操作区 -->
             <slot name="foot">
                 <div class="u-modal-foot" v-if="okButton || cancelButton">
-                    <u-button v-if="cancelButton" @click="cancel">{{cancelButton}}</u-button>
-                    <u-button v-if="okButton" @click="ok"
-                        :disabled="!enableConfirm" color="primary">{{okButton}}</u-button>
+                    <u-button v-if="cancelButton" @click="cancel">{{ cancelButton }}</u-button>
+                    <u-button
+                        v-if="okButton"
+                        @click="ok"
+                        :disabled="!enableConfirm"
+                        color="primary"
+                        >{{ okButton }}</u-button
+                    >
                 </div>
             </slot>
             <u-icon v-if="showClose" name="close" @click="cancel" class="close" />

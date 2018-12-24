@@ -1,7 +1,5 @@
 <template>
-  <div class="u-layout" :dir="dir" v-bind="$attrs" v-on="$listeners">
-    <slot></slot>
-  </div>
+    <div class="u-layout" :dir="dir" v-bind="$attrs" v-on="$listeners"><slot></slot></div>
 </template>
 <script>
 export default {
