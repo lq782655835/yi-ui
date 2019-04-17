@@ -22,7 +22,8 @@
         }
     },
     "dependencies": {
-        "vue": "^2.5.17"
+        "vue": "^2.5.17",
+        "vue-svgicon": "^3.2.6"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "^3.0.3",

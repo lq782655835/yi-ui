@@ -87,8 +87,8 @@
                     <u-table-column label="分类" width="100px">{{ row.tab }}</u-table-column>
                     <u-table-column label="名称" width="100px">{{ row.title }}</u-table-column>
                     <u-table-column label="操作" width="60px">
-                        <u-link name="edit" />
-                        <u-link name="delete" />
+                        <u-icon name="edit" />
+                        <u-icon name="delete" />
                     </u-table-column>
                 </template>
             </u-table>
@@ -101,11 +101,6 @@
 
 <script>
 import DComponentItem from '@/components/demo/d-component-item'
-// import DModalTest from '@/components/demo/d-modal-test'
-// import DModalForm from '@/components/demo/d-modal-form'
-// import { getAllTopic } from '@/server'
-// import { transfer } from '@/utils/helper'
-
 const l = console.log
 
 export default {
