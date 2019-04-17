@@ -13,6 +13,7 @@ import UModal from './src/components/u-modal'
 import UToast from './src/components/u-toast'
 
 import UPopper from './src/components/u-popper'
+import UPopup from './src/components/u-popup'
 
 import './src/assets/css/reset.scss'
 
@@ -30,5 +31,6 @@ export {
     UTabs,
     UModal,
     UToast,
-    UPopper
+    UPopper,
+    UPopup
 }

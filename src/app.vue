@@ -90,6 +90,25 @@
                     <u-button>popper-appendTo</u-button>
                     <div slot="popper">测试测试</div>
                 </u-popper>
+                <u-popper trigger="manual" :open.sync="pupperValue">
+                    <u-button @click="pupperValue = !pupperValue">popper-trigger-manual</u-button>
+                    <div slot="popper">测试测试</div>
+                </u-popper>
+            </u-layout>
+        </d-component-item>
+        <d-component-item name="u-popup">
+            <u-layout>
+                <u-popup placement="right" content="使用 content 属性添加内容">
+                    <u-button>内容</u-button>
+                </u-popup>
+                <u-popup title="标题" content="使用 title 属性添加标题">
+                    <u-button>标题</u-button>
+                </u-popup>
+                <u-popup trigger="click">
+                    <u-button>使用 slot</u-button>
+                    <span slot="title">标题</span>
+                    <span slot="content">使用 <u-link>slot</u-link> 可以添加一些复杂功能</span>
+                </u-popup>
             </u-layout>
         </d-component-item>
 
@@ -155,7 +174,8 @@ export default {
             ],
             selectValue: 1,
             switchValue: true,
-            checkboxValue: true
+            checkboxValue: true,
+            pupperValue: false
         }
     },
     created() {

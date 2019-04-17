@@ -99,13 +99,15 @@ export default {
                 })
             )
         }
-        offEvents.push(
-            event.on(document, 'click', e => {
-                !referenceEl.contains(e.target) &&
-                    !popperEl.contains(e.target) &&
-                    this.toggle(false)
-            })
-        )
+        // 手动模式失焦不隐藏
+        this.trigger !== 'manual' &&
+            offEvents.push(
+                event.on(document, 'click', e => {
+                    !referenceEl.contains(e.target) &&
+                        !popperEl.contains(e.target) &&
+                        this.toggle(false)
+                })
+            )
     },
     updated() {
         this.childVM.$forceUpdate()
