@@ -69,6 +69,30 @@
             <u-button @click="confirmByJS">js api方式打开Confirm模态框</u-button>
             <u-button @click="alertByJS">js api方式打开Alert模态框</u-button>
         </d-component-item>
+
+        <d-component-item name="u-popper">
+            <u-layout>
+                <u-popper>
+                    <u-button>popper基础组件</u-button>
+                    <div slot="popper">
+                        <u-select v-model="selectValue" :list="selectList" />
+                    </div>
+                </u-popper>
+                <u-popper placement="right">
+                    <u-button>popper-placement</u-button>
+                    <div slot="popper">测试测试</div>
+                </u-popper>
+                <u-popper trigger="hover">
+                    <u-button>popper-trigger</u-button>
+                    <div slot="popper">测试测试</div>
+                </u-popper>
+                <u-popper appendTo="reference">
+                    <u-button>popper-appendTo</u-button>
+                    <div slot="popper">测试测试</div>
+                </u-popper>
+            </u-layout>
+        </d-component-item>
+
         <d-component-item name="u-tabs/tab">
             <u-tabs>
                 <u-tab title="普通tab1">测试1tab内容</u-tab>

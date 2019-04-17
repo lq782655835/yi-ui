@@ -22,6 +22,7 @@
         }
     },
     "dependencies": {
+        "popper.js": "^1.15.0",
         "vue": "^2.5.17",
         "vue-svgicon": "^3.2.6"
     },

@@ -12,6 +12,8 @@ import UTabs from './src/components/u-tab/u-tabs'
 import UModal from './src/components/u-modal'
 import UToast from './src/components/u-toast'
 
+import UPopper from './src/components/u-popper'
+
 import './src/assets/css/reset.scss'
 
 export {
@@ -27,5 +29,6 @@ export {
     UTab,
     UTabs,
     UModal,
-    UToast
+    UToast,
+    UPopper
 }
