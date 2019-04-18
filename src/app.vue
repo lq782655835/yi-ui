@@ -4,6 +4,7 @@
             <u-link href="/">系统内导链</u-link>
             <u-link href="https://www.baidu.com" color="primary">系统外导链百度</u-link>
         </d-component-item>
+
         <d-component-item name="u-button">
             <u-button>默认按钮</u-button>
             <u-button color="primary">主要按钮</u-button>
@@ -11,6 +12,7 @@
             <u-button color="primary" size="s">小按钮</u-button>
             <u-button color="primary" href="https://www.baidu.com">导链按钮</u-button>
         </d-component-item>
+
         <d-component-item name="u-icon" desc="icon组件使用本地svg/image/网络图片">
             <u-icon name="edit" />
             <u-icon
@@ -26,10 +28,12 @@
                 class="cloud-music"
             />
         </d-component-item>
+
         <d-component-item name="u-select">
             <u-select v-model="selectValue" :list="selectList" />
             <u-select :list="selectList" size="s" disabled />
         </d-component-item>
+
         <d-component-item name="u-input/textarea">
             <u-input v-model="inputValue" placeholder="请输入专题名" />
             <u-input size="s" placeholder="小输入框" />
@@ -43,12 +47,13 @@
             <u-switch disabled />
         </d-component-item>
 
-        <d-component-item name="u-checkbox">
+        <d-component-item name="u-checkbox/u-checkboxs">
             <u-layout>
                 <u-checkbox v-model="checkboxValue" label="多选框" />
                 <u-checkbox v-model="checkboxValue" disabled>多选框2</u-checkbox>
             </u-layout>
-            <u-checkboxs :list="checkboxsList" :value="checkboxsValue" />
+            <u-checkboxs :list.sync="checkboxsList" />
+            <u-checkboxs :list.sync="checkboxsList2" checkedField="isSelect" />
         </d-component-item>
 
         <d-component-item name="u-layout">
@@ -63,6 +68,7 @@
                 <u-button>竖向排列</u-button>
             </u-layout>
         </d-component-item>
+
         <d-component-item name="u-toast">
             <u-button @click="$toast('这是一个toast提示框')">编程式打开toast</u-button>
             <u-button @click="$toast('这是一个错误提示框', 'error')">错误toast</u-button>
@@ -101,6 +107,7 @@
                 </u-popper>
             </u-layout>
         </d-component-item>
+
         <d-component-item name="u-tooltip">
             <u-layout>
                 <u-tooltip placement="right" content="使用 content 属性添加内容">
@@ -129,6 +136,7 @@
                 <u-tab title="路由tab">测试3内容</u-tab>
             </u-tabs>
         </d-component-item>
+
         <d-component-item name="u-table">
             <u-table :list="tableList">
                 <template slot-scope="{ row, rowIndex }">
@@ -141,6 +149,7 @@
                 </template>
             </u-table>
         </d-component-item>
+
         <u-modal :visible.sync="modalVisible" title="测试模态框">
             这里可以随意自定义html内容
         </u-modal>
@@ -181,8 +190,14 @@ export default {
             switchValue: true,
             checkboxValue: true,
             pupperValue: false,
-            checkboxsList: [{ label: '选项1', value: 1 }, { label: '选项2', value: 2 }],
-            checkboxsValue: [1]
+            checkboxsList: [
+                { label: '选项1', checked: true, field: 'other' },
+                { label: '选项2', checked: false, field: 'other' }
+            ],
+            checkboxsList2: [
+                { label: '禁用可选', isSelect: true, disabled: true },
+                { label: '字段可选', isSelect: false, disabled: false }
+            ]
         }
     },
     created() {
@@ -191,6 +206,7 @@ export default {
     methods: {
         test() {
             this.selectValue = 2
+            console.log(this.checkboxsList, this.checkboxsList2)
         },
         openModalByJsAPI() {
             // transfer(DModalTest)({ title: 'js调用弹开模态框' }).then(() => console.log('关闭弹窗之后todo...'))

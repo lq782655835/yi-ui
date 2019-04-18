@@ -1,12 +1,12 @@
 <template>
     <div class="u-checkboxs">
         <u-checkbox
-            v-for="(item, index) in formatList"
+            v-for="(item, index) in list"
             :key="index"
-            :label="item.label"
-            :checked="item.checked"
-            :disabled="disabled"
-            @change="checkboxChanged($event, item)"
+            :label="item[labelField]"
+            :checked.sync="item[checkedField]"
+            :disabled="disabled || item[disabledField]"
+            @change="checkboxChanged"
         />
     </div>
 </template>
@@ -15,31 +15,15 @@
 export default {
     name: 'u-checkboxs',
     props: {
-        value: { type: Array, default: () => [] },
         list: { type: Array, default: () => [] },
         labelField: { type: String, default: 'label' },
-        valueField: { type: String, default: 'value' },
+        checkedField: { type: String, default: 'checked' },
+        disabledField: { type: String, default: 'disabled' },
         disabled: { type: Boolean, default: false }
     },
-    data() {
-        return {
-            selectList: this.value
-        }
-    },
-    computed: {
-        formatList() {
-            return this.list.map(item =>
-                Object.assign({}, item, {
-                    label: item[this.labelField],
-                    value: item[this.valueField],
-                    checked: this.value.some(val => val == item[this.valueField])
-                })
-            )
-        }
-    },
     methods: {
-        checkboxChanged(isChecked, item) {
-            console.log(e, item)
+        checkboxChanged() {
+            this.$emit('change', this.list)
         }
     }
 }
