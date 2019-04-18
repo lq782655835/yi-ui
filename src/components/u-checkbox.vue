@@ -1,6 +1,7 @@
 <template>
     <div class="u-checkbox" :disabled="disabled" @click="check">
-        <input type="checkbox" :checked="isCheck" :disabled="disabled" /> <slot>{{ label }}</slot>
+        <input type="checkbox" :checked="isCheck" :disabled="disabled" />
+        <slot>{{ label }}</slot>
     </div>
 </template>
 
@@ -30,9 +31,10 @@ export default {
             if (this.disabled) return
 
             this.isCheck = !this.isCheck
-            this.$emit('change', this.isCheck) // allow v-modal
-            this.$emit('update:checked', this.isCheck) // allow sync
+
             this.$emit('check', this.isCheck)
+            this.$emit('update:checked', this.isCheck) // allow sync
+            this.$emit('change', this.isCheck) // allow v-modal
         }
     }
 }

@@ -13,7 +13,8 @@ import UModal from './src/components/u-modal'
 import UToast from './src/components/u-toast'
 
 import UPopper from './src/components/u-popper'
-import UPopup from './src/components/u-popup'
+import UTooltip from './src/components/u-tooltip'
+import UCheckboxs from './src/components/u-checkboxs'
 
 import './src/assets/css/reset.scss'
 
@@ -32,5 +33,6 @@ export {
     UModal,
     UToast,
     UPopper,
-    UPopup
+    UTooltip,
+    UCheckboxs
 }
