@@ -3,8 +3,13 @@
 # 确保脚本抛出遇到的错误
 set -e
 
+# Commit changes.
+msg="deploy at `date`"
+if [ $# != 0 ]
+  then msg="$*"
+fi
 git add -A
-git commit -m 'deploy'
+git commit -m "$msg"
 echo 'local commited'
 
 # 发布到 github
