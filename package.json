@@ -11,6 +11,7 @@
     ],
     "scripts": {
         "github": "sh deploy.sh",
+        "gh": "sh gh.sh",
         "dev": "vue-cli-service serve --open",
         "build": "vue-cli-service build --target lib --name YIUI ./index.js",
         "build:site": "site=true vue-cli-service build",
