@@ -49,11 +49,27 @@
 
         <d-component-item name="u-checkbox/u-checkboxs">
             <u-layout>
+                多选框（值：{{ checkboxValue }}）：
                 <u-checkbox v-model="checkboxValue" label="多选框" />
-                <u-checkbox v-model="checkboxValue" disabled>多选框2</u-checkbox>
+                <u-checkbox v-model="checkboxValue" disabled>多选框禁用</u-checkbox>
             </u-layout>
-            <u-checkboxs :list.sync="checkboxsList" />
-            <u-checkboxs :list.sync="checkboxsList2" checkedField="isSelect" />
+            <u-layout>
+                多选组（checkboxs核心只有list属性）：
+                <u-checkboxs :list="checkboxsList" />
+                <u-checkboxs :list="checkboxsList2" checkedField="isSelect" />
+            </u-layout>
+        </d-component-item>
+
+        <d-component-item name="u-radio/u-radios">
+            <u-layout>
+                单个radio无意义（值：{{ radioValue }}）：
+                <u-radio v-model="radioValue" label="选项1" />
+                <u-radio v-model="radioValue" label="disabled状态" disabled />
+            </u-layout>
+            <u-layout>
+                单选组（值：{{ radiosValue }}）：
+                <u-radios v-model="radiosValue" :list="radiosList" />
+            </u-layout>
         </d-component-item>
 
         <d-component-item name="u-layout">
@@ -73,6 +89,7 @@
             <u-button @click="$toast('这是一个toast提示框')">编程式打开toast</u-button>
             <u-button @click="$toast('这是一个错误提示框', 'error')">错误toast</u-button>
         </d-component-item>
+
         <d-component-item name="u-modal/confirm/alert">
             <u-button @click="modalVisible = true">visible方式打开模态框</u-button>
             <u-button @click="openModalByJsAPI">js api方式打开自定义模态框</u-button>
@@ -196,8 +213,11 @@ export default {
             ],
             checkboxsList2: [
                 { label: '禁用可选', isSelect: true, disabled: true },
-                { label: '字段可选', isSelect: false, disabled: false }
-            ]
+                { label: '选项2', isSelect: false, disabled: false }
+            ],
+            radioValue: false,
+            radiosValue: 'value1',
+            radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }]
         }
     },
     created() {

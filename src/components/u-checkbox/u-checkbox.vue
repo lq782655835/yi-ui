@@ -1,12 +1,13 @@
 <template>
-    <div class="u-checkbox" :disabled="disabled" @click="check">
-        <input type="checkbox" :checked="isCheck" :disabled="disabled" />
+    <div class="u-checkbox" :disabled="disabled" @click="checkClick">
+        <input type="checkbox" :checked="checkValue" :disabled="disabled" />
         <slot>{{ label }}</slot>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'u-checkbox',
     props: {
         checked: { type: Boolean, default: false },
         label: { type: String, default: '' },
@@ -18,23 +19,23 @@ export default {
     },
     data() {
         return {
-            isCheck: this.checked
+            checkValue: this.checked
         }
     },
     watch: {
         checked(val) {
-            this.isCheck = val
+            this.checkValue = val
         }
     },
     methods: {
-        check() {
+        checkClick() {
             if (this.disabled) return
 
-            this.isCheck = !this.isCheck
+            this.checkValue = !this.checkValue
 
-            this.$emit('check', this.isCheck)
-            this.$emit('update:checked', this.isCheck) // allow sync
-            this.$emit('change', this.isCheck) // allow v-modal
+            this.$emit('check', this.checkValue)
+            this.$emit('update:checked', this.checkValue) // allow sync
+            this.$emit('change', this.checkValue) // allow v-modal
         }
     }
 }

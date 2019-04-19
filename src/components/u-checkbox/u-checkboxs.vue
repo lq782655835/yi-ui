@@ -28,3 +28,13 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.u-checkboxs {
+    display: inline-block;
+
+    .u-checkbox {
+        padding: 0 5px;
+    }
+}
+</style>
