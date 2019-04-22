@@ -7,7 +7,7 @@
 export default {
     props: {
         // type=flow属性集：dir、display、gap、align
-        // type=flex属性集：dir、justify(主轴)、align(交叉轴)
+        // type=flex属性集：dir、main(主轴)、cross(交叉轴)
         type: {
             type: String,
             default: 'flow',
@@ -21,53 +21,6 @@ export default {
 $margin-small: 10px;
 $margin-base: 20px;
 $margin-large: 30px;
-
-@mixin flex-layout {
-    display: flex;
-
-    &[display='inline'] {
-        display: inline-flex;
-    }
-
-    &[dir='h'] {
-        flex-direction: row;
-    }
-    &[dir='v'] {
-        flex-direction: column;
-    }
-
-    &[justify='start'] {
-        justify-content: flex-start;
-    }
-    &[justify='center'] {
-        justify-content: center;
-    }
-    &[justify='end'] {
-        justify-content: flex-end;
-    }
-    &[justify='space-between'] {
-        justify-content: space-between;
-    }
-    &[justify='space-around'] {
-        justify-content: space-around;
-    }
-
-    &[align='start'] {
-        align-items: flex-start;
-    }
-    &[align='center'] {
-        align-items: center;
-    }
-    &[align='end'] {
-        align-items: flex-end;
-    }
-    &[align='baseline'] {
-        align-items: baseline;
-    }
-    &[align='stretch'] {
-        align-items: stretch;
-    }
-}
 
 @mixin flow-layout {
     &[display='inline'] > * {
@@ -144,6 +97,50 @@ $margin-large: 30px;
     }
     &[align='right'] {
         text-align: right;
+    }
+}
+
+@mixin flex-layout {
+    display: flex;
+
+    &[display='inline'] {
+        display: inline-flex;
+    }
+
+    &[dir='h'] {
+        flex-direction: row;
+    }
+    &[dir='v'] {
+        flex-direction: column;
+    }
+
+    &[main='left'] {
+        justify-content: flex-start;
+    }
+    &[main='center'] {
+        justify-content: center;
+    }
+    &[main='right'] {
+        justify-content: flex-end;
+    }
+    &[main='justify'] {
+        justify-content: space-between;
+    }
+
+    &[cross='top'] {
+        align-items: flex-start;
+    }
+    &[cross='center'] {
+        align-items: center;
+    }
+    &[cross='bottom'] {
+        align-items: flex-end;
+    }
+    &[cross='baseline'] {
+        align-items: baseline;
+    }
+    &[cross='stretch'] {
+        align-items: stretch;
     }
 }
 

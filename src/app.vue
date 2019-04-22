@@ -97,12 +97,12 @@
                 <u-button>竖向排列</u-button>
             </u-layout>
             <br />
-            <u-layout type="flex" justify="center">
+            <u-layout type="flex" main="center" gap="s">
                 <span>flex横向排列</span>
                 <span>flex横向排列</span>
                 <span>flex横向排列</span>
             </u-layout>
-            <u-layout type="flex" dir="v" align="center">
+            <u-layout type="flex" dir="v" cross="center">
                 <span>flex纵向排列</span>
                 <span>flex纵向排列</span>
                 <span>flex纵向排列</span>
