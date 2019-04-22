@@ -20,7 +20,7 @@ Vue.use(YIUI)
 
 ## Preview
 
-![](./yi-ui.png)
+![image](https://user-images.githubusercontent.com/6310131/56486871-ca06ce00-650b-11e9-9592-a6287322d5da.png)
 
 ## License
 
