@@ -1,19 +1,15 @@
 <template>
-    <div class="u-layout" :dir="dir" :type="type" v-bind="$attrs" v-on="$listeners">
+    <div class="u-layout" :dir="dir" :flex="flex" v-bind="$attrs" v-on="$listeners">
         <slot></slot>
     </div>
 </template>
 <script>
 export default {
     props: {
-        // type=flow属性集：dir、display、gap、align
-        // type=flex属性集：dir、main(主轴)、cross(交叉轴)
-        type: {
-            type: String,
-            default: 'flow',
-            validator: value => ['flow', 'flex'].includes(value)
-        },
-        dir: { type: String, default: 'h', validator: value => ['h', 'v'].includes(value) }
+        // flow属性集：dir、display、gap、align
+        // flex属性集：dir、main(主轴)、cross(交叉轴)、display、gap
+        dir: { type: String, default: 'h', validator: value => ['h', 'v'].includes(value) },
+        flex: { type: String }
     }
 }
 </script>
@@ -102,6 +98,7 @@ $margin-large: 30px;
 
 @mixin flex-layout {
     display: flex;
+    flex-direction: row;
 
     &[display='inline'] {
         display: inline-flex;
@@ -114,32 +111,32 @@ $margin-large: 30px;
         flex-direction: column;
     }
 
-    &[main='left'] {
+    &[flex~='main:left'] {
         justify-content: flex-start;
     }
-    &[main='center'] {
+    &[flex~='main:center'] {
         justify-content: center;
     }
-    &[main='right'] {
+    &[flex~='main:right'] {
         justify-content: flex-end;
     }
-    &[main='justify'] {
+    &[flex~='main:justify'] {
         justify-content: space-between;
     }
 
-    &[cross='top'] {
+    &[flex~='cross:top'] {
         align-items: flex-start;
     }
-    &[cross='center'] {
+    &[flex~='cross:center'] {
         align-items: center;
     }
-    &[cross='bottom'] {
+    &[flex~='cross:bottom'] {
         align-items: flex-end;
     }
-    &[cross='baseline'] {
+    &[flex~='cross:baseline'] {
         align-items: baseline;
     }
-    &[cross='stretch'] {
+    &[flex~='cross:stretch'] {
         align-items: stretch;
     }
 }
@@ -147,7 +144,7 @@ $margin-large: 30px;
 .u-layout {
     @include flow-layout();
 
-    &[type='flex'] {
+    &[flex] {
         @include flex-layout();
     }
 }
