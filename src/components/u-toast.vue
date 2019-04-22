@@ -10,6 +10,7 @@
 import Vue from 'vue'
 
 const Toast = {
+    name: 'u-toast',
     props: {
         text: { type: String, default: '' },
         type: {
@@ -43,8 +44,7 @@ const Toast = {
 }
 
 Toast.toast = (...options) => {
-    const Ctor = Vue.component('u-toast')
-    console.log(Ctor, 123)
+    const Ctor = Vue.component('UToast')
     if (!Ctor) return
     let instance = new Ctor()
     instance.show(...options)

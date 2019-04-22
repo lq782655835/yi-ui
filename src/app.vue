@@ -78,6 +78,7 @@
                 <u-button>默认横向排列</u-button>
                 <u-button>默认横向排列</u-button>
             </u-layout>
+            <br />
             <u-layout dir="v" display="block" gap="s">
                 <u-button>竖向排列 && block对象</u-button>
                 <u-button>竖向排列</u-button>
@@ -225,6 +226,7 @@ export default {
     },
     methods: {
         test() {
+            this.radiosValue = 'value2'
             this.selectValue = 2
             console.log(this.checkboxsList, this.checkboxsList2)
         },
