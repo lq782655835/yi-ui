@@ -96,6 +96,17 @@
                 <u-button>竖向排列</u-button>
                 <u-button>竖向排列</u-button>
             </u-layout>
+            <br />
+            <u-layout type="flex" justify="center">
+                <span>flex横向排列</span>
+                <span>flex横向排列</span>
+                <span>flex横向排列</span>
+            </u-layout>
+            <u-layout type="flex" dir="v" align="center">
+                <span>flex纵向排列</span>
+                <span>flex纵向排列</span>
+                <span>flex纵向排列</span>
+            </u-layout>
         </d-component-item>
 
         <d-component-item name="u-toast">
