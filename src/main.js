@@ -6,8 +6,8 @@ import * as YIUI from '../index'
 import * as svgicon from 'vue-svgicon'
 import '@/assets/icon'
 Vue.use(svgicon, { tagName: 'svgicon', width: 100, height: 100 })
-import UIcon from './components/u-icon'
-Vue.component('UIcon', UIcon)
+import DIconLocal from './components/demo/d-icon-local.vue'
+Vue.component('DIconLocal', DIconLocal)
 
 Object.keys(YIUI).forEach(key => {
     Vue.component(key, YIUI[key])

@@ -18,6 +18,7 @@ import UTooltip from './src/components/u-tooltip'
 
 import URadio from './src/components/u-radio/u-radio'
 import URadios from './src/components/u-radio/u-radios'
+import UIcon from './src/components/u-icon'
 
 import './src/assets/css/reset.scss'
 
@@ -39,5 +40,6 @@ export {
     UPopper,
     UTooltip,
     URadio,
-    URadios
+    URadios,
+    UIcon
 }
