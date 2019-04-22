@@ -1,9 +1,9 @@
 # yi-ui
 
-a lightweight ui component for vue2.0
+a lightweight ui component for vue2.x
 ## Setup
 ```
-npm i yi-ui
+npm install yi-ui
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ Vue.use(YIUI)
 
 ## Preview
 
-![](https://user-images.githubusercontent.com/6310131/47153017-e3d31880-d310-11e8-9bea-f53cb2cb22c6.png)
+![](./yi-ui.png)
 
 ## License
 
