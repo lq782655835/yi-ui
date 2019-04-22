@@ -109,7 +109,7 @@ const Modal = {
 
 Modal.confirm = content =>
     new Promise((resolve, reject) => {
-        const Ctor = Vue.component('u-modal')
+        const Ctor = Vue.component('UModal')
         if (!Ctor) return
 
         let instance = new Ctor({
@@ -122,7 +122,7 @@ Modal.confirm = content =>
 
 Modal.alert = content =>
     new Promise(resolve => {
-        const Ctor = Vue.component('u-modal')
+        const Ctor = Vue.component('UModal')
         if (!Ctor) return
 
         let instance = new Ctor({

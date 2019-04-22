@@ -19,7 +19,9 @@
                 <u-icon name="check_circle" size="40px" color="#FF00FF" />
                 <u-icon name="info" href="http://www.baidu.com" />
                 <u-icon name="face" to="/demo" disabled />
-                <u-link href="https://material.io/icons/" color="primary">更多图标</u-link>
+                <u-link href="https://material.io/icons/" target="_blank" color="primary"
+                    >更多图标</u-link
+                >
             </u-layout>
             <u-layout>
                 <d-icon-local name="edit" />
@@ -35,7 +37,7 @@
                     name="https://upload.wikimedia.org/wikipedia/commons/6/6b/NetEase_Music_logo.svg"
                     class="cloud-music"
                 />
-                (通用本地icon组件解决方案：本地svg/image/网络图片)
+                (附通用本地icon组件解决方案：支持本地svg/image/网络图片)
             </u-layout>
         </d-component-item>
 
@@ -103,10 +105,10 @@
 
         <d-component-item name="u-modal/confirm/alert">
             <u-button @click="modalVisible = true">visible方式打开模态框</u-button>
-            <u-button @click="openModalByJsAPI">js api方式打开自定义模态框</u-button>
-            <u-button @click="openModalForm">表单异步处理</u-button>
             <u-button @click="confirmByJS">js api方式打开Confirm模态框</u-button>
             <u-button @click="alertByJS">js api方式打开Alert模态框</u-button>
+            <u-button @click="openModalByJsAPI">js api方式打开自定义模态框</u-button>
+            <u-button @click="openModalForm">表单异步处理</u-button>
         </d-component-item>
 
         <d-component-item name="u-popper">
@@ -165,17 +167,18 @@
             </u-tabs>
         </d-component-item>
 
-        <d-component-item name="u-table">
+        <d-component-item name="u-table/u-pagination">
             <u-table :list="tableList">
                 <template slot-scope="{ row, rowIndex }">
                     <u-table-column label="分类" width="100px">{{ row.tab }}</u-table-column>
                     <u-table-column label="名称" width="100px">{{ row.title }}</u-table-column>
                     <u-table-column label="操作" width="60px">
-                        <u-icon name="edit" />
-                        <u-icon name="delete" />
+                        <u-icon name="edit" size="18px" />
+                        <u-icon name="delete" size="18px" />
                     </u-table-column>
                 </template>
             </u-table>
+            {{ paginationValue }}<u-pagination :total="1000" v-model="paginationValue" />
         </d-component-item>
 
         <u-modal :visible.sync="modalVisible" title="测试模态框">
@@ -186,7 +189,6 @@
 
 <script>
 import DComponentItem from '@/components/demo/d-component-item'
-const l = console.log
 
 export default {
     components: { DComponentItem },
@@ -202,6 +204,7 @@ export default {
                     title: '测试2'
                 }
             ],
+            paginationValue: 1,
             inputValue: '',
             modalVisible: false,
             selectList: [
@@ -231,9 +234,6 @@ export default {
             radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }]
         }
     },
-    created() {
-        // this._gettableList()
-    },
     methods: {
         test() {
             this.radiosValue = 'value2'
@@ -253,9 +253,6 @@ export default {
         },
         alertByJS() {
             this.$alert('这是一个Alert提示框').then(() => l('alert确定'))
-        },
-        async _gettableList() {
-            // this.tableList = await getAllTopic()
         }
     }
 }
