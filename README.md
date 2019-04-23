@@ -57,7 +57,7 @@ Vue.use(YIUI)
 
 ## Preview
 
-![image](https://user-images.githubusercontent.com/6310131/56557191-c12a0100-65cc-11e9-9a9b-8e64de06c3ac.png)
+![image](https://user-images.githubusercontent.com/6310131/56558066-fbe16880-65cf-11e9-9940-07c7be20834c.png)
 
 ## License
 
