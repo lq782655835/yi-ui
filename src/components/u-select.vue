@@ -94,7 +94,7 @@ $max-height: 220px;
         box-sizing: border-box;
         width: 100%;
         height: 100%;
-        padding: 0 26px;
+        padding: 0 26px 0 10px;
 
         .arrow {
             position: absolute;
