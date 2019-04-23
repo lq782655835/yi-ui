@@ -3,7 +3,8 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-# 1. 切换到gh-pages分支
+# 1. 切换到gh-pages分支(注意此时的本地gh-pages与远程gh-pages是不一样的)
+git merge master # 合并最新的master代码
 git checkout gh-pages
 # 2. 执行build生成打包后文件
 npm run build:site
