@@ -12,6 +12,8 @@ import UCheckbox from './src/components/u-checkbox/u-checkbox'
 import UCheckboxs from './src/components/u-checkbox/u-checkboxs'
 import URadio from './src/components/u-radio/u-radio'
 import URadios from './src/components/u-radio/u-radios'
+import UForm from './src/components/u-form/u-form'
+import UFormItem from './src/components/u-form/u-form-item'
 
 // usage
 import UTableColumn from './src/components/u-table/u-table-column'
@@ -48,5 +50,7 @@ export {
     UTooltip,
     URadio,
     URadios,
-    UIcon
+    UIcon,
+    UForm,
+    UFormItem
 }

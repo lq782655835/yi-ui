@@ -109,6 +109,29 @@
             </u-layout>
         </d-component-item>
 
+        <d-component-item name="u-form">
+            <u-form labelWidth="200px" title="表单标题" @save="test">
+                <u-form-item label="姓名" error="请填写姓名" required>
+                    <u-input />
+                </u-form-item>
+                <u-form-item label="年龄" required tip="仅支持数字">
+                    <u-input />
+                </u-form-item>
+                <u-form-item label="性别" error="请填写性别">
+                    <u-select v-model="selectValue" :list="selectList" />
+                </u-form-item>
+                <u-form-item label="开通vip">
+                    <u-switch />
+                </u-form-item>
+                <u-form-item label="学校">
+                    <u-radios v-model="radiosValue" :list="radiosList" />
+                </u-form-item>
+                <u-form-item label="喜好">
+                    <u-checkboxs :list="checkboxsList" />
+                </u-form-item>
+            </u-form>
+        </d-component-item>
+
         <d-component-item name="u-toast">
             <u-button @click="$toast('这是一个toast提示框')">编程式打开toast</u-button>
             <u-button @click="$toast('这是一个错误提示框', 'error')">错误toast</u-button>
