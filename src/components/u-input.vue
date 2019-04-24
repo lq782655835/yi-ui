@@ -92,6 +92,7 @@ export default {
             border: 1px solid $primary-color;
         }
 
+        /* 提示语统一样式 */
         &:-ms-input-placeholder {
             @extend .placeholder-text;
         }
@@ -109,7 +110,8 @@ export default {
         }
 
         .placeholder-text {
-            @include font-normal(14px, $tip-color);
+            font-size: 14px;
+            color: $tip-color;
             letter-spacing: 0;
             line-height: 14px;
         }

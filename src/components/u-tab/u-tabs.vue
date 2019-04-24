@@ -77,7 +77,7 @@ export default {
             border: 1px solid rgba(0, 0, 0, 0.15);
             border-bottom: 0 solid rgba(0, 0, 0, 0.15);
             border-radius: 2px 2px 0 0;
-            @include font-normal(14px, #333333);
+            font-size: 14px;
             cursor: pointer;
             transition: all 0.2s ease;
 

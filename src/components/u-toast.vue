@@ -82,7 +82,9 @@ export default Toast
             border-radius: 16px;
             vertical-align: bottom;
             text-align: center;
-            @include font-normal(12px, #fefefe, true);
+            color: #fefefe;
+            font-size: 12px;
+            font-weight: bold;
 
             &.success {
                 background: $success-color;
@@ -96,7 +98,7 @@ export default Toast
         .text {
             max-width: 196px;
             margin-left: 24px;
-            @include font-normal(14px);
+            font-size: 14px;
 
             &.success {
                 color: $success-color;
