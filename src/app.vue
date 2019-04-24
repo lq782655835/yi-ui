@@ -38,22 +38,6 @@
                     >更多图标</u-link
                 >
             </u-layout>
-            <u-layout>
-                <d-icon-local name="edit" />
-                <d-icon-local
-                    scale="3"
-                    name="delete"
-                    color="#00FF00"
-                    @click="$toast.show('本地图片库更加适合实际项目')"
-                />
-                <d-icon-local name="close" />
-                <d-icon-local name="slef-image.png" />
-                <d-icon-local
-                    name="https://upload.wikimedia.org/wikipedia/commons/6/6b/NetEase_Music_logo.svg"
-                    class="cloud-music"
-                />
-                (附通用本地icon组件解决方案：支持本地svg/image/网络图片)
-            </u-layout>
         </d-component-item>
 
         <d-component-item name="u-select">
