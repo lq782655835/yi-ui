@@ -11,7 +11,13 @@ Vue.component('DIconLocal', DIconLocal)
 
 Object.keys(YIUI).forEach(key => {
     Vue.component(key, YIUI[key])
-    key === 'UToast' && (Vue.prototype.$toast = YIUI[key].toast)
+    if (key === 'UToast') {
+        Vue.prototype.$toast = YIUI[key].toast
+    }
+    if (key === 'UModal') {
+        Vue.prototype.$confirm = YIUI[key].confirm
+        Vue.prototype.$alert = YIUI[key].alert
+    }
 })
 
 Vue.config.productionTip = false

@@ -131,9 +131,6 @@ Modal.alert = content =>
         instance.$on('ok', () => resolve())
         instance.open()
     })
-
-Vue.prototype.$confirm = Modal.confirm
-Vue.prototype.$alert = Modal.alert
 export default Modal
 </script>
 
