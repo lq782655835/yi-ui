@@ -39,6 +39,7 @@ Vue.use(YIUI)
     * [u-link](./src/components/u-link.vue)
     * [u-button](./src/components/u-button.vue)
     * [u-icon](./src/components/u-icon.vue)
+    * [u-layout](./src/components/u-layout.vue)
 * 表单组件
     * [u-input/textarea](./src/components/u-input.vue)
     * [u-select](./src/components/u-select.vue)
