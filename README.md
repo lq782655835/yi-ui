@@ -2,7 +2,18 @@
 
 a lightweight ui component for vue2.x
 
+[![NPM Version][npm-img]][npm-url]
+[![NPM Download][download-img]][download-url]
+
+[npm-img]: http://img.shields.io/npm/v/yi-ui.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/yi-ui
+[david-img]: https://img.shields.io/appveyor/ci/lq782655835/yi-ui.svg
+[david-url]: https://npmjs.org/package/yi-ui
+[download-img]: https://img.shields.io/npm/dm/yi-ui.svg?style=flat-square
+[download-url]: https://npmjs.org/package/yi-ui
+
 ## Why yi-ui
+
 当前开源市场（Vue技术栈）有非常多成熟的组件库，比如ElementUI、iView等。
 这些组件库主打大而全，有完备的兼容性和较广的覆盖性，特别适合企业级中后台系统开发，尤其是针对没有交互和视觉同学的开发团队，能显著提高团队的效率。
 但这些组件库也不是可以覆盖全部的业务场景，比如有些公司已经有很好的UED团队，有自己的交互或视觉规范，这时使用ElementUI等组件库就不合适。
