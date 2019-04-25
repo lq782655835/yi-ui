@@ -3,11 +3,12 @@
 a lightweight ui component for vue2.x
 
 [![NPM Version][npm-img]][npm-url]
+[![Dependencies][david-img]][david-url]
 [![NPM Download][download-img]][download-url]
 
 [npm-img]: http://img.shields.io/npm/v/yi-ui.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/yi-ui
-[david-img]: https://img.shields.io/appveyor/ci/lq782655835/yi-ui.svg
+[david-img]: https://img.shields.io/github/repo-size/lq782655835/yi-ui.svg
 [david-url]: https://npmjs.org/package/yi-ui
 [download-img]: https://img.shields.io/npm/dm/yi-ui.svg?style=flat-square
 [download-url]: https://npmjs.org/package/yi-ui
