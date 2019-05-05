@@ -27,9 +27,10 @@ export default {
             rightSty: {}
         }
     },
+    inject: ['uForm'],
     created() {
-        this.$parent.labelWidth && (this.leftSty.width = this.$parent.labelWidth)
-        this.$parent.contentWidth && (this.rightSty.width = this.$parent.contentWidth)
+        this.uForm.labelWidth && (this.leftSty.width = this.uForm.labelWidth)
+        this.uForm.contentWidth && (this.rightSty.width = this.uForm.contentWidth)
     }
 }
 </script>

@@ -31,6 +31,11 @@ export default {
         contentWidth: String,
         okButton: { type: String, default: '确定' },
         cancelButton: { type: String, default: '取消' }
+    },
+    provide() {
+        return {
+            uForm: this
+        }
     }
 }
 </script>
