@@ -10,8 +10,7 @@
         >
             <slot></slot>
         </a>
-        <i v-if="separatorClass" class="separator material-icons">{{ separatorClass }}</i>
-        <span v-else class="separator">{{ separator }}</span>
+        <span class="separator">{{ separator }}</span>
     </li>
 </template>
 
@@ -23,8 +22,7 @@ export default {
     mixins: [ULink],
     data() {
         return {
-            separator: '',
-            separatorClass: ''
+            separator: ''
         }
     },
 
@@ -32,7 +30,6 @@ export default {
 
     mounted() {
         this.separator = this.uCrumb.separator
-        this.separatorClass = this.uCrumb.separatorClass
     }
 }
 </script>

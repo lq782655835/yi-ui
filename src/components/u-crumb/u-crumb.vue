@@ -8,8 +8,7 @@
 export default {
     name: 'u-crumb',
     props: {
-        separator: { type: String, default: '/' },
-        separatorClass: { type: String, default: '' }
+        separator: { type: String, default: '/' }
     },
     provide() {
         return {
