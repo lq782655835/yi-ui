@@ -63,6 +63,7 @@ Vue.use(YIUI)
     * [u-table/u-table-column](./src/components/u-table/u-table.vue)
     * [u-pagination](./src/components/u-pagination.vue)
     * [u-tabs/u-tab](./src/components/u-tab/u-tabs.vue)
+    * [u-crumb/u-crumb-item](./src/components/u-crumb/u-crumb.vue)
 * 弹出框组件
     * [u-modal](./src/components/u-modal.vue)
     * [u-toast](./src/components/u-toast.vue)
