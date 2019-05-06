@@ -61,5 +61,10 @@ export default {
     &[color='primary'] {
         color: $primary-color;
     }
+
+    &[disabled='disabled'] {
+        cursor: not-allowed;
+        color: $disabled-color;
+    }
 }
 </style>

@@ -18,6 +18,7 @@
         <d-component-item name="u-link">
             <u-link href="/">系统内导链</u-link>
             <u-link href="https://www.baidu.com" color="primary">系统外导链百度</u-link>
+            <u-link href="/" disabled>禁用</u-link>
         </d-component-item>
 
         <d-component-item name="u-button">
@@ -81,6 +82,19 @@
                 单选组（值：{{ radiosValue }}）：
                 <u-radios v-model="radiosValue" :list="radiosList" />
             </u-layout>
+        </d-component-item>
+
+        <d-component-item name="u-radio/u-radios">
+            <u-crumb>
+                <u-crumb-item to="/">home</u-crumb-item>
+                <u-crumb-item to="/">home</u-crumb-item>
+                <u-crumb-item>home</u-crumb-item>
+            </u-crumb>
+            <u-crumb separator=">">
+                <u-crumb-item to="/">home</u-crumb-item>
+                <u-crumb-item to="/" disabled>home</u-crumb-item>
+                <u-crumb-item>home</u-crumb-item>
+            </u-crumb>
         </d-component-item>
 
         <d-component-item name="u-layout">
@@ -285,7 +299,7 @@ export default {
                 .catch(() => alert('你选择了取消'))
         },
         alertByJS() {
-            this.$alert('这是一个Alert提示框').then(() => l('alert确定'))
+            this.$alert('这是一个Alert提示框').then(() => console.log('alert确定'))
         }
     }
 }

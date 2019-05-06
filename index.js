@@ -21,6 +21,8 @@ import UTable from './src/components/u-table/u-table'
 import UPagination from './src/components/u-pagination'
 import UTab from './src/components/u-tab/u-tab'
 import UTabs from './src/components/u-tab/u-tabs'
+import UCrumb from './src/components/u-crumb/u-crumb.vue'
+import UCrumbItem from './src/components/u-crumb/u-crumb-item.vue'
 
 // popup
 import UModal from './src/components/u-modal'
@@ -52,5 +54,7 @@ export {
     URadios,
     UIcon,
     UForm,
-    UFormItem
+    UFormItem,
+    UCrumb,
+    UCrumbItem
 }
