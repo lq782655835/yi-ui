@@ -1,8 +1,15 @@
-<template>
-    <div class="u-layout" :dir="dir" :flex="flex" v-bind="$attrs" v-on="$listeners">
+<template functional>
+    <div
+        class="u-layout"
+        :dir="props.dir || 'h'"
+        :flex="props.flex"
+        v-bind="data.attrs"
+        v-on="listeners"
+    >
         <slot></slot>
     </div>
 </template>
+<!--
 <script>
 export default {
     props: {
@@ -13,7 +20,8 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+-->
+<style lang="scss">
 $margin-small: 10px;
 $margin-base: 20px;
 $margin-large: 30px;
