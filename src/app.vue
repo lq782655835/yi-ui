@@ -307,6 +307,8 @@ export default {
 
 <style lang="scss" scoped>
 .g-demo {
+    margin: 20px 50px;
+
     & > * {
         margin: 10px 0;
     }
