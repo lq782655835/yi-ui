@@ -7,7 +7,8 @@ module.exports = {
     },
     transformIgnorePatterns: ['/node_modules/'],
     moduleNameMapper: {
-        '^@/(.*)$': '<rootDir>/src/$1'
+        '^@/(.*)$': '<rootDir>/src/$1',
+        '^vue$': 'vue/dist/vue.common.js' // jest alias
     },
     snapshotSerializers: ['jest-serializer-vue'],
     testMatch: ['**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'],
