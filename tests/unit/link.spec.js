@@ -71,4 +71,42 @@ describe('Link', () => {
             done()
         }, 20)
     })
+
+    it('click inner', done => {
+        let result
+        wrapper = createVueWrapper({
+            template: `
+                <u-link @click="clickEvent"><p class="inner">test</p></u-link>
+            `,
+            methods: {
+                clickEvent: function(e) {
+                    result = e
+                }
+            }
+        })
+        wrapper.vm.$el.querySelector('.inner').click()
+        setTimeout(function() {
+            expect(result).toBeDefined()
+            done()
+        }, 20)
+    })
+
+    it('click disabled', done => {
+        let result
+        wrapper = createVueWrapper({
+            template: `
+                <u-link @click="clickEvent" disabled></u-link>
+            `,
+            methods: {
+                clickEvent: function(e) {
+                    result = e
+                }
+            }
+        })
+        wrapper.vm.$el.click()
+        setTimeout(function() {
+            expect(result).toBeUndefined()
+            done()
+        }, 20)
+    })
 })
