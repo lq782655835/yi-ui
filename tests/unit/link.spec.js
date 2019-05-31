@@ -1,8 +1,12 @@
-import { getWrapperFactory, createVueWrapper } from '../util.js'
+import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
 import Link from '@/components/u-link.vue'
 
 describe('Link', () => {
     let wrapper
+
+    afterEach(() => {
+        destroyWrapper(wrapper)
+    })
 
     it('name', () => {
         expect(Link.name).toBe('u-link')
@@ -51,19 +55,16 @@ describe('Link', () => {
 
     it('click', done => {
         let result
-        wrapper = createVueWrapper(
-            {
-                template: `
+        wrapper = createVueWrapper({
+            template: `
                 <u-link @click="clickEvent"></u-link>
             `,
-                methods: {
-                    clickEvent: function(e) {
-                        result = e
-                    }
+            methods: {
+                clickEvent: function(e) {
+                    result = e
                 }
-            },
-            true
-        )
+            }
+        })
         wrapper.vm.$el.click()
         setTimeout(function() {
             expect(result).toBeDefined()

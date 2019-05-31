@@ -4,22 +4,16 @@ import { shallowMount, createWrapper } from '@vue/test-utils'
 import YIUI from '../lib'
 Vue.use(YIUI)
 
-let id = 0
-const createElm = function() {
-    const elm = document.createElement('div')
-
-    elm.id = 'app' + ++id
-    document.body.appendChild(elm)
-
-    return elm
+export const getWrapperFactory = (Ctor, propsData = {}, attachToDocument = true) => {
+    return shallowMount(Ctor, { propsData, attachToDocument })
 }
 
-export const getWrapperFactory = (Ctor, propsData = {}) => {
-    return shallowMount(Ctor, { propsData })
-}
-
-export const createVueWrapper = function(Compo, mounted = false) {
+export const createVueWrapper = (Compo, attachedToDocument = true) => {
     const Constructor = Vue.extend(Compo)
-    let vm = new Constructor().$mount(mounted === false ? null : createElm())
-    return createWrapper(vm)
+    let vm = new Constructor().$mount()
+    return createWrapper(vm, { attachedToDocument })
+}
+
+export const destroyWrapper = wrapper => {
+    wrapper && wrapper.destroy()
 }
