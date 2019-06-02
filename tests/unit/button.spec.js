@@ -1,24 +1,20 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Link from '@/components/u-link.vue'
+import Button from '@/components/u-button.vue'
 
-describe('Link', () => {
+describe('Button', () => {
     let wrapper
 
     afterEach(() => {
         destroyWrapper(wrapper)
     })
 
-    it('name', () => {
-        expect(Link.name).toBe('u-link')
-    })
-
     it('class', () => {
-        wrapper = getWrapperFactory(Link)
-        expect(wrapper.classes('u-link')).toBe(true)
+        wrapper = getWrapperFactory(Button)
+        expect(wrapper.classes('u-button')).toBe(true)
     })
 
     it('disabled', () => {
-        wrapper = getWrapperFactory(Link, {
+        wrapper = getWrapperFactory(Button, {
             disabled: true
         })
         expect(wrapper.attributes('disabled')).toBe('disabled')
@@ -26,7 +22,7 @@ describe('Link', () => {
 
     it('href', () => {
         let href = 'https://baidu.com'
-        wrapper = getWrapperFactory(Link, {
+        wrapper = getWrapperFactory(Button, {
             href
         })
         expect(wrapper.attributes('href')).toBe(href)
@@ -34,17 +30,26 @@ describe('Link', () => {
 
     it('to', () => {
         let to = '/demo'
-        wrapper = getWrapperFactory(Link, {
+        wrapper = getWrapperFactory(Button, {
             to
         })
         expect(wrapper.vm.to).toBe(to)
     })
 
     it('color', () => {
-        wrapper = getWrapperFactory(Link, {
-            color: 'primary'
+        let color = 'primary'
+        wrapper = getWrapperFactory(Button, {
+            color
         })
-        expect(wrapper.attributes('color')).toBe('primary')
+        expect(wrapper.attributes('color')).toBe(color)
+    })
+
+    it('size', () => {
+        let size = 'l'
+        wrapper = getWrapperFactory(Button, {
+            size
+        })
+        expect(wrapper.attributes('size')).toBe(size)
     })
 
     it('slot', () => {
@@ -52,7 +57,7 @@ describe('Link', () => {
         wrapper = createVueWrapper(
             {
                 template: `
-                <u-link>${slot}</u-link>
+                <u-button>${slot}</u-button>
             `
             },
             true
@@ -64,7 +69,7 @@ describe('Link', () => {
         let result
         wrapper = createVueWrapper({
             template: `
-                <u-link @click="clickEvent"></u-link>
+                <u-button @click="clickEvent"></u-button>
             `,
             methods: {
                 clickEvent: function(e) {
@@ -83,7 +88,7 @@ describe('Link', () => {
         let result
         wrapper = createVueWrapper({
             template: `
-                <u-link @click="clickEvent"><p class="inner">test</p></u-link>
+                <u-button @click="clickEvent"><p class="inner">test</p></u-button>
             `,
             methods: {
                 clickEvent: function(e) {
@@ -102,7 +107,7 @@ describe('Link', () => {
         let result
         wrapper = createVueWrapper({
             template: `
-                <u-link @click="clickEvent" disabled></u-link>
+                <u-button @click="clickEvent" disabled></u-button>
             `,
             methods: {
                 clickEvent: function(e) {
