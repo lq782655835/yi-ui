@@ -115,7 +115,7 @@ describe('Button', () => {
                 }
             }
         })
-        wrapper.vm.$el.click()
+        wrapper.trigger('click')
         setTimeout(function() {
             expect(result).toBeUndefined()
             done()
