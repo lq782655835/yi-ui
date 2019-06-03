@@ -35,6 +35,7 @@
                 <u-icon name="check_circle" size="40px" color="#FF00FF" />
                 <u-icon name="info" href="http://www.baidu.com" />
                 <u-icon name="face" to="/demo" disabled />
+                <u-icon>test12312313</u-icon>
                 <u-link href="https://material.io/icons/" target="_blank" color="primary"
                     >更多图标</u-link
                 >
