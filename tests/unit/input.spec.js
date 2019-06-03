@@ -67,19 +67,20 @@ describe('Input', () => {
         expect(inputElm.value).toBe('changed value')
     })
 
-    it('value changed', () => {
-        let result
+    it('v-model', () => {
         wrapper = createVueWrapper({
             template: `
-                <u-input @input="clickEvent"></u-input>
+                <u-input v-model="input"></u-input>
             `,
-            methods: {
-                clickEvent: function(e) {
-                    result = e
+            data() {
+                return {
+                    input: 'init'
                 }
             }
         })
+        expect(wrapper.vm.input).toBe('init')
+
         wrapper.find('input').setValue('changed value')
-        expect(result).toBe('changed value')
+        expect(wrapper.vm.input).toBe('changed value')
     })
 })
