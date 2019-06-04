@@ -60,12 +60,20 @@
     ],
     "repository": "lq782655835/yi-ui",
     "author": "springleo <782655835@qq.com>",
+    "license": "MIT",
     "main": "lib/index.js",
     "files": [
         "dist/*",
         "lib/*",
         "index.js",
         "src/*"
+    ],
+    "keywords": [
+        "vue",
+        "vue-component",
+        "component",
+        "components",
+        "ui"
     ],
     "description": "a lightweight ui for vue2.x",
     "husky": {
