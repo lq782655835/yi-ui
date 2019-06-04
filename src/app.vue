@@ -48,7 +48,8 @@
 
         <d-component-item name="u-input/textarea">
             <u-input v-model="inputValue" placeholder="请输入专题名" />
-            <u-input size="s" placeholder="小输入框" />
+            <u-input minlength="1" maxlength="10" placeholder="原生长度限制" />
+            <u-input size="s" placeholder="小输入框" @click="test" />
             <u-input disabled placeholder="禁用输入框" />
             <br /><br />
             <u-input type="textarea" placeholder="textarea输入框" />
