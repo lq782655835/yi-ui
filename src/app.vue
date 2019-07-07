@@ -16,26 +16,27 @@
             同时有很好的扩展行，源码简单易懂而且依赖少，使得可以快速拷贝yi-ui，基于此创建自己项目的组件库。
         </d-component-item>
         <d-component-item name="u-link">
-            <u-link href="/">系统内导链</u-link>
-            <u-link href="https://www.baidu.com" color="primary">系统外导链百度</u-link>
+            <u-link href="/" type="success">系统内导链</u-link>
+            <u-link href="https://www.baidu.com" type="primary">系统外导链百度</u-link>
             <u-link href="/" disabled>禁用</u-link>
+            <u-link icon="border_color">带图标</u-link>
         </d-component-item>
 
         <d-component-item name="u-button">
             <u-button>默认按钮</u-button>
-            <u-button color="primary">主要按钮</u-button>
-            <u-button color="primary" disabled>禁用按钮</u-button>
-            <u-button color="primary" size="s">小按钮</u-button>
-            <u-button color="primary" href="https://www.baidu.com">导链按钮</u-button>
+            <u-button type="primary">主要按钮</u-button>
+            <u-button type="primary" disabled>禁用按钮</u-button>
+            <u-button type="success" size="s">小按钮</u-button>
+            <u-button type="danger" href="https://www.baidu.com">导链按钮</u-button>
         </d-component-item>
 
         <d-component-item name="u-icon" desc="基于material-design-icons">
             <u-layout>
                 <u-icon name="backup" />
-                <u-icon name="check_circle" size="40px" color="#FF00FF" />
+                <u-icon name="check_circle" size="40px" type="#FF00FF" />
                 <u-icon name="info" href="http://www.baidu.com" />
                 <u-icon name="face" to="/demo" disabled />
-                <u-link href="https://material.io/icons/" target="_blank" color="primary"
+                <u-link href="https://material.io/icons/" target="_blank" type="primary"
                     >更多图标</u-link
                 >
             </u-layout>
@@ -112,37 +113,25 @@
             </u-layout>
             <br />
             <u-layout flex="main:center">
-                <span>flex横向排列</span>
-                <span>flex横向排列</span>
-                <span>flex横向排列</span>
+                <span>flex横向排列</span> <span>flex横向排列</span> <span>flex横向排列</span>
             </u-layout>
             <u-layout flex="cross:center" dir="v">
-                <span>flex纵向排列</span>
-                <span>flex纵向排列</span>
-                <span>flex纵向排列</span>
+                <span>flex纵向排列</span> <span>flex纵向排列</span> <span>flex纵向排列</span>
             </u-layout>
         </d-component-item>
 
         <d-component-item name="u-form">
             <u-form labelWidth="200px" title="表单标题" @save="test">
-                <u-form-item label="姓名" error="请填写姓名" required>
-                    <u-input />
-                </u-form-item>
-                <u-form-item label="年龄" required tip="仅支持数字">
-                    <u-input />
-                </u-form-item>
+                <u-form-item label="姓名" error="请填写姓名" required> <u-input /> </u-form-item>
+                <u-form-item label="年龄" required tip="仅支持数字"> <u-input /> </u-form-item>
                 <u-form-item label="性别" error="请填写性别">
                     <u-select v-model="selectValue" :list="selectList" />
                 </u-form-item>
-                <u-form-item label="开通vip">
-                    <u-switch />
-                </u-form-item>
+                <u-form-item label="开通vip"> <u-switch /> </u-form-item>
                 <u-form-item label="学校">
                     <u-radios v-model="radiosValue" :list="radiosList" />
                 </u-form-item>
-                <u-form-item label="喜好">
-                    <u-checkboxs :list="checkboxsList" />
-                </u-form-item>
+                <u-form-item label="喜好"> <u-checkboxs :list="checkboxsList" /> </u-form-item>
             </u-form>
         </d-component-item>
 
@@ -163,9 +152,7 @@
             <u-layout>
                 <u-popper>
                     <u-button>popper基础组件</u-button>
-                    <div slot="popper">
-                        <u-select v-model="selectValue" :list="selectList" />
-                    </div>
+                    <div slot="popper"><u-select v-model="selectValue" :list="selectList" /></div>
                 </u-popper>
                 <u-popper placement="right">
                     <u-button>popper-placement</u-button>

@@ -26,7 +26,7 @@
                         v-if="okButton"
                         @click="ok"
                         :disabled="!enableConfirm"
-                        color="primary"
+                        type="primary"
                         >{{ okButton }}</u-button
                     >
                 </div>

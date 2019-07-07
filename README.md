@@ -42,7 +42,7 @@ Vue.use(YIUI)
 
 ``` html
 <u-link>click me</u-link>
-<u-button color="primary">click me</u-button>
+<u-button type="primary">click me</u-button>
 ```
 
 ## Components

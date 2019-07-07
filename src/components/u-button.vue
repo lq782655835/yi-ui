@@ -40,10 +40,12 @@ export default {
         padding: 10px 85px;
     }
 
-    &[color='primary'] {
-        border: 1px solid $primary-color;
-        background: $primary-color;
-        color: #ffffff;
+    @each $name, $color in $colors {
+        &[type='#{$name}'] {
+            border: 1px solid $color;
+            background: $color;
+            color: #ffffff;
+        }
     }
 
     &[disabled='disabled'] {
@@ -51,6 +53,10 @@ export default {
         background: $disabled-color;
         border: 1px solid $disabled-color;
         color: #ffffff;
+    }
+
+    & + .u-button {
+        margin-left: 10px;
     }
 }
 </style>

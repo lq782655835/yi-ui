@@ -1,6 +1,7 @@
 <template>
     <a class="u-link" v-on="listeners" :href="href" :disabled="disabled" @click="onClick">
-        <slot></slot>
+        <u-icon v-if="icon" :name="icon" />
+        <span v-if="$slots.default"> <slot></slot> </span>
     </a>
 </template>
 
@@ -12,7 +13,8 @@ export default {
         to: [String, Object],
         replace: { type: Boolean, default: false },
         append: { type: Boolean, default: false },
-        disabled: { type: Boolean, default: false }
+        disabled: { type: Boolean, default: false },
+        icon: { type: String, default: '' }
     },
     computed: {
         listeners() {
@@ -53,18 +55,34 @@ export default {
 
 <style lang="scss" scoped>
 .u-link {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
     text-decoration: none;
     cursor: pointer;
     outline: none;
     color: inherit;
 
-    &[color='primary'] {
-        color: $primary-color;
+    @each $name, $color in $colors {
+        &[type='#{$name}'] {
+            color: $color;
+        }
     }
 
     &[disabled='disabled'] {
         cursor: not-allowed;
         color: $disabled-color;
+    }
+
+    & [class*='u-icon-'] + span {
+        margin-left: 5px;
+    }
+
+    .u-icon {
+        font-size: 14px;
     }
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
     <div class="u-radio" :disabled="disabled" @click="radioClick">
-        <input type="radio" :checked="checkValue" :disabled="disabled" />
-        <slot>{{ label }}</slot>
+        <input type="radio" :checked="checkValue" :disabled="disabled" /> <slot>{{ label }}</slot>
     </div>
 </template>
 

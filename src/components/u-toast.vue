@@ -91,7 +91,7 @@ export default Toast
             }
 
             &.error {
-                background: $error-color;
+                background: $danger-color;
             }
         }
 
@@ -105,7 +105,7 @@ export default Toast
             }
 
             &.error {
-                color: $error-color;
+                color: $danger-color;
             }
         }
     }

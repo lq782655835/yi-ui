@@ -25,9 +25,7 @@
                             <slot name="content">{{ content }}</slot>
                         </slot>
                     </div>
-                    <div class="foot" v-if="$slots.foot">
-                        <slot name="foot"></slot>
-                    </div>
+                    <div class="foot" v-if="$slots.foot"><slot name="foot"></slot></div>
                 </div>
             </slot>
         </div>

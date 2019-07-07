@@ -7,14 +7,12 @@
             </div>
         </slot>
         <!-- 内容区 -->
-        <div class="u-form-body">
-            <slot></slot>
-        </div>
+        <div class="u-form-body"><slot></slot></div>
         <!-- 操作区 -->
         <slot name="foot">
             <div class="u-form-foot u-form-ops" v-if="okButton || cancelButton">
                 <u-button v-if="cancelButton" @click="$emit('cancel')">{{ cancelButton }}</u-button>
-                <u-button v-if="okButton" @click="$emit('save')" color="primary">{{
+                <u-button v-if="okButton" @click="$emit('save')" type="primary">{{
                     okButton
                 }}</u-button>
             </div>
@@ -92,7 +90,7 @@ $margin-s: 8px;
 
     &-error {
         font-size: 12px;
-        color: $error-color;
+        color: $danger-color;
         position: absolute;
         bottom: -20px;
     }
