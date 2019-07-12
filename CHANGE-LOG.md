@@ -7,3 +7,8 @@
     * link/button组件默认兄弟组件有间隔
 * enhance
     * link/button等统一使用type，替换以前的color属性
+
+## 发布流程
+* npm run build
+* npm login
+* npm publish
