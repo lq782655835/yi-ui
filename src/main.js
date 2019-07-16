@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import app from './app.vue'
-import * as YIUI from '../index'
+import * as YIUI from './entry'
 
 Object.keys(YIUI).forEach(key => {
     Vue.component(key, YIUI[key])
