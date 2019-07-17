@@ -9,7 +9,7 @@ NProgress.configure({ showSpinner: false })
 const router = new VueRouter({
     routes,
     linkActiveClass: 'is-active',
-    scrollBehavior (to, from, savedPosition) {
+    scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition
         } else {

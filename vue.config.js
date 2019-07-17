@@ -11,13 +11,13 @@ module.exports = {
     chainWebpack: config => {
         // markdown Loader
         config.module
-          .rule('md')
-          .test(/\.md$/)
-          .use('vue-loader')
+            .rule('md')
+            .test(/\.md$/)
+            .use('vue-loader')
             .loader('vue-loader')
             .end()
-          .use('@vusion/md-vue-loader')
+            .use('@vusion/md-vue-loader')
             .loader('@vusion/md-vue-loader')
             .end()
-      }
+    }
 }

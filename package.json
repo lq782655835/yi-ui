@@ -21,14 +21,14 @@
     "description": "a lightweight ui for vue2.x",
     "husky": {
         "hooks": {
-            "pre-commit": "npm run format"
+            "pre-commit": "npm run format && git add ."
         }
     },
     "scripts": {
         "dev": "vue-cli-service serve --open",
         "build": "vue-cli-service build --target lib --name YIUI ./src/entry.js",
         "build:site": "site=true vue-cli-service build",
-        "release": "npm run build:lib && node ./scripts/public.js",
+        "release": "npm run build && node ./scripts/public.js",
         "release:site": "npm run build:site && node ./scripts/site.js",
         "format": "prettier --write './**/*.{js,ts,vue,json}'",
         "test:unit": "vue-cli-service test:unit",
@@ -46,7 +46,7 @@
         "@vue/cli-plugin-unit-jest": "^3.8.0",
         "@vue/cli-service": "^3.0.3",
         "@vue/test-utils": "1.0.0-beta.29",
-        "@vusion/md-vue-loader": "^1.0.1",
+        "@vusion/md-vue-loader": "1.0.2",
         "babel-core": "7.0.0-bridge.0",
         "babel-eslint": "^10.0.1",
         "babel-jest": "^23.6.0",

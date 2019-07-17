@@ -1,5 +1,5 @@
 const _import = file => require('@/pages/' + file + '.vue').default
-// const _md = file => require('../../docs/' + file + '.md').default
+const _md = file => require('../../docs/' + file + '.md').default
 export default [
     {
         path: '/',
@@ -9,8 +9,8 @@ export default [
         path: '/demo',
         component: _import('demo')
     },
-    // {
-    //     path: '/link',
-    //     component: _md('link')
-    // }
+    {
+        path: '/link',
+        component: _md('link')
+    }
 ]
