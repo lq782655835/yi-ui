@@ -6,6 +6,7 @@
 import ULink from '../u-link'
 
 export default {
+    name: 'u-tab',
     mixins: [ULink],
     props: {
         title: { type: String, default: '' }

@@ -2,6 +2,7 @@ const shell = require('shelljs')
 const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
+const semver = require('semver')
 const packagePath = path.resolve(__dirname, '../package.json')
 let package = require(packagePath)
 
@@ -11,10 +12,7 @@ let package = require(packagePath)
  */
 const getNextVersion = () => {
     const version = package.version
-    const versionArray = version.split('.')
-    // 版本+1
-    versionArray[versionArray.length - 1] = ~~versionArray[versionArray.length - 1] + 1
-    const willVersion = versionArray.join('.')
+    const willVersion = semver.inc(version, 'patch')
 
     return willVersion
 }
@@ -31,7 +29,7 @@ const updatePackageVersion = willVersion => {
     const willVersion = getNextVersion()
     updatePackageVersion(willVersion)
 
-    同步git
+    // 同步git
     console.log(chalk.black.bgGreen('git开始!\n'))
     shell.exec('git add -A')
     shell.exec(`git commit -m ":zap: [build] "${willVersion}`)

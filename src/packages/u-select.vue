@@ -19,6 +19,7 @@
 
 <script>
 export default {
+    name: 'u-select',
     props: {
         list: { type: Array, default: () => [] },
         value: [String, Number],

@@ -4,6 +4,7 @@
 
 <script>
 export default {
+    name: 'u-table-column',
     props: {
         label: { type: String, default: '' },
         width: { type: String, default: '' }

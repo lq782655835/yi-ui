@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    name: 'u-switch',
     props: {
         value: { type: Boolean, default: false },
         disabled: { type: Boolean, default: false }

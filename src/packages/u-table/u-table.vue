@@ -22,6 +22,7 @@
 
 <script>
 export default {
+    name: 'u-table',
     props: {
         list: { type: Array, default: () => [] },
         auto: { type: Boolean, default: true }

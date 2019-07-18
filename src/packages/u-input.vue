@@ -23,6 +23,7 @@
 
 <script>
 export default {
+    name: 'u-input',
     props: {
         type: { type: String, default: 'text' },
         value: { type: [String, Number] },

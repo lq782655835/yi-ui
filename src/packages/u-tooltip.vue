@@ -34,7 +34,7 @@
 
 <script>
 export default {
-    name: 'u-popup',
+    name: 'u-tooltip',
     props: {
         title: String,
         content: String,

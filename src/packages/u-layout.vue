@@ -9,18 +9,19 @@
         <slot></slot>
     </div>
 </template>
-<!--
+
 <script>
 export default {
-    props: {
-        // flow属性集：dir、display、gap、align
-        // flex属性集：dir、main(主轴)、cross(交叉轴)、display、gap
-        dir: { type: String, default: 'h', validator: value => ['h', 'v'].includes(value) },
-        flex: { type: String }
-    }
+    name: 'u-layout'
+    // props: {
+    //     // flow属性集：dir、display、gap、align
+    //     // flex属性集：dir、main(主轴)、cross(交叉轴)、display、gap
+    //     dir: { type: String, default: 'h', validator: value => ['h', 'v'].includes(value) },
+    //     flex: { type: String }
+    // }
 }
 </script>
--->
+
 <style lang="scss">
 $margin-small: 10px;
 $margin-base: 20px;

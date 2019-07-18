@@ -17,6 +17,7 @@
 
 <script>
 export default {
+    name: 'u-tabs',
     props: {
         value: {
             type: Number,
