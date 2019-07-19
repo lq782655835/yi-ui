@@ -36,6 +36,7 @@
         "github": "sh ./scripts/deploy.sh"
     },
     "dependencies": {
+        "highlight.js": "^9.15.8",
         "material-design-icons": "^3.0.1",
         "popper.js": "^1.15.0",
         "vue": "^2.5.17"

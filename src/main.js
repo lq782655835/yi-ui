@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import app from './app.vue'
 import router from './router'
+import 'highlight.js/styles/atom-one-dark.css'
 
 // 注册全局组件
 import * as YIUI from './entry'
