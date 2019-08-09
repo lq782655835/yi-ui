@@ -26,7 +26,7 @@
     },
     "scripts": {
         "dev": "vue-cli-service serve --open",
-        "build": "vue-cli-service build --target lib --name YIUI ./src/entry.js",
+        "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "build:site": "site=true vue-cli-service build",
         "release": "npm run build && node ./scripts/public.js",
         "release:site": "npm run build:site && node ./scripts/site.js",

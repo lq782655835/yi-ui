@@ -1,5 +1,5 @@
 <template>
-    <div class="u-tabs">
+    <div class="u-tabs" :disabled="disabled">
         <ul class="u-tabs-nav">
             <li
                 v-for="(itemVM, index) in itemVMs"
@@ -23,7 +23,8 @@ export default {
             type: Number,
             default: 0,
             validator: value => Number.isInteger(value) && value >= 0
-        }
+        },
+        disabled: { type: Boolean, default: false }
     },
     data() {
         return {
@@ -45,8 +46,9 @@ export default {
     },
     methods: {
         handleClick(index, itemVM) {
-            this.activeIndex = index
+            if (this.disabled) return
 
+            this.activeIndex = index
             this.$emit('update:value', index) // allow sync api
             this.$emit('input', index) // allow v-model
             itemVM.to && itemVM.navigate() // allow router api
