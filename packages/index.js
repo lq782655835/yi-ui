@@ -23,6 +23,8 @@ import UTab from './u-tab/u-tab'
 import UTabs from './u-tab/u-tabs'
 import UCrumb from './u-crumb/u-crumb.vue'
 import UCrumbItem from './u-crumb/u-crumb-item.vue'
+import UStep from './u-step/u-step'
+import USteps from './u-step/u-steps'
 
 // popup
 import UModal from './u-modal'
@@ -46,6 +48,8 @@ export {
     UPagination,
     UTab,
     UTabs,
+    UStep,
+    USteps,
     UModal,
     UToast,
     UPopper,

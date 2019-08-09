@@ -71,7 +71,7 @@
             </u-layout>
         </d-component-item>
 
-        <d-component-item name="u-radio/u-radios">
+        <d-component-item name="u-crumb">
             <u-crumb>
                 <u-crumb-item to="/">home</u-crumb-item>
                 <u-crumb-item to="/">home</u-crumb-item>
@@ -175,16 +175,29 @@
         </d-component-item>
 
         <d-component-item name="u-tabs/tab">
-            <u-tabs>
+            <u-tabs v-model="tabValue">
                 <u-tab title="普通tab1">测试1tab内容</u-tab>
                 <u-tab title="普通tab2">测试2tab内容</u-tab>
                 <u-tab title="普通tab3">测试3tab内容</u-tab>
             </u-tabs>
             <u-tabs :value="1">
-                <u-tab title="去往首页" to="/"></u-tab>
-                <u-tab title="去往Demo" to="/demo"></u-tab>
-                <u-tab title="路由tab">测试3内容</u-tab>
+                <u-tab title="去往首页"></u-tab>
+                <u-tab title="去往Demo"></u-tab>
+                <u-tab title="路由tab"></u-tab>
             </u-tabs>
+        </d-component-item>
+
+        <d-component-item name="u-steps/step">
+            <u-steps>
+                <u-step title="普通step1">测试1step内容</u-step>
+                <u-step title="普通step2">测试2step内容</u-step>
+                <u-step title="普通step3">测试3step内容</u-step>
+            </u-steps>
+            <u-steps :value="1" :disabled="true">
+                <u-step title="去往首页" to="/"></u-step>
+                <u-step title="去往Demo" to="/demo"></u-step>
+                <u-step title="路由step">测试3内容</u-step>
+            </u-steps>
         </d-component-item>
 
         <d-component-item name="u-table/u-pagination">
@@ -251,7 +264,9 @@ export default {
             ],
             radioValue: false,
             radiosValue: 'value1',
-            radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }]
+            radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }],
+            tabValue: 0,
+            stepValue: 0
         }
     },
     methods: {
