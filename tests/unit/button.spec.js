@@ -1,5 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Button from '@/components/u-button.vue'
+import { UButton } from '../../packages'
+const Button = UButton
 
 describe('Button', () => {
     let wrapper

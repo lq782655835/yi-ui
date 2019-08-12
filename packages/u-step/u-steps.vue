@@ -28,19 +28,13 @@ export default {
 </script>
 
 <style lang="scss">
+$class-slug: u-step !default;
 .u-steps {
-    overflow: hidden; // TODO: override style
     &-nav {
-        .u-step0 {
-            z-index: 5;
-        }
-
-        .u-step1 {
-            z-index: 4;
-        }
-
-        .u-step2 {
-            z-index: 3;
+        @for $i from 0 through 4 {
+            .#{$class-slug}#{$i} {
+                z-index: 5 - $i;
+            }
         }
 
         .u-step {

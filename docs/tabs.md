@@ -1,37 +1,84 @@
-# Link
+# Step
 
 ## 基本用法
 ```vue
 <template>
-    <u-tabs>
-        <u-tab title="普通tab1">测试1tab内容</u-tab>
-        <u-tab title="普通tab2">测试2tab内容</u-tab>
-        <u-tab title="普通tab3">测试3tab内容</u-tab>
+    <u-tabs v-model="tabValue">
+        <u-tab title="tab1">测试1tab内容</u-tab>
+        <u-tab title="tab2">测试2tab内容</u-tab>
+        <u-tab title="tab3">测试3tab内容</u-tab>
+    </u-tabs>
+</template>
+
+<script>
+export default {
+    data() {
+        return { tabValue: 1 }
+    }
+}
+</script>
+```
+
+## to
+``` vue
+<template>
+    <u-tabs :value="2">
+        <u-tab title="去往首页" to="/"></u-tab>
+        <u-tab title="去往Demo" to="/demo"></u-tab>
+        <u-tab title="去往Tab" to="/tabs"></u-tab>
     </u-tabs>
 </template>
 ```
 
-## to
+## title
+```vue
+<template>
+    <u-tabs>
+        <u-tab title="tab1">
+            <span slot="title">
+                <u-icon name="edit" /> 自定义title
+            </span>
+            测试1tab内容
+        </u-tab>
+        <u-tab title="tab2">
+            <span slot="title">
+                <u-icon name="backup" /> 自定义title
+            </span>
+            测试1tab内容
+        </u-tab>
+    </u-tabs>
+</template>
+```
+
+## closable
+```vue
+<template>
+    <u-tabs :closable="true">
+        <u-tab title="tab1">测试1tab内容</u-tab>
+        <u-tab title="tab2">测试2tab内容</u-tab>
+        <u-tab title="tab3">测试3tab内容</u-tab>
+    </u-tabs>
+</template>
+```
 
 ## disabled
 
-## 使用参数
+## Tabs Atrribute
 
 参数 | 说明 | 类型 | 可选值 | 默认值
 --- | --- | --- | --- | ---
-type | 主题 | String | primary/success/warning/danger/info | -
-icon | 图标 | String | - | -
-href | 跳转的链接地址 | String | - | -
-to | 配合vue-router, 与router-link的to属性相同 | String/Location | - | -
-target | 链接打开的方式(原声属性) | String | _blank/_self/_parent/_top | _self
-append | 配合vue-router, 为true时, 在当前路径前追加to的路径 | Boolean | true/false | false
-replace | 配合vue-router, 为true时, 点击调用router.replace(), 不会在导航留下记录 | Boolean | true/false | false
+value/v-model |  |  |  | -
+closable | 是否可关闭, 禁用后不响应click事件 | Boolean | true/false | false
 disabled | 是否禁用, 禁用后不响应click事件 | Boolean | true/false | false
 
-## Events
+## Tabs Events
 
 | 事件名| 说明| 回调值|
 | -- | -- | -- |
-| @click |  点击按钮时触发 | event |
-| @before-navigate |  使用router相关属性切换路由前触发 | event: {to, replace, preventDefault} |
-| @navigate |  使用router相关属性切换路由后触发 | event: {to, replace, exact} |
+| @before-close |  关闭tab前事件 | event |
+
+## Tab Attribute
+
+参数 | 说明 | 类型 | 可选值 | 默认值
+--- | --- | --- | --- | ---
+title | 选项卡标题 |  |  | -

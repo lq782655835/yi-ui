@@ -1,4 +1,5 @@
 // base
+import URender from './u-render'
 import ULink from './u-link'
 import UButton from './u-button'
 import UIcon from './u-icon'
@@ -35,6 +36,7 @@ import UTooltip from './u-tooltip'
 import './assets/css/reset.scss'
 
 export {
+    URender,
     ULink,
     UButton,
     UInput,

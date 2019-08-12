@@ -14,14 +14,13 @@
     "keywords": [
         "vue",
         "vue-component",
-        "component",
         "components",
         "ui"
     ],
     "description": "a lightweight ui for vue2.x",
     "husky": {
         "hooks": {
-            "pre-commit": "npm run format && git add ."
+            "pre-commit": "npm run format && npm run lint && git add ."
         }
     },
     "scripts": {
@@ -74,7 +73,9 @@
             "plugin:vue/essential",
             "eslint:recommended"
         ],
-        "rules": {},
+        "rules": {
+            "no-console": "off"
+        },
         "parserOptions": {
             "parser": "babel-eslint"
         }

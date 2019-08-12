@@ -1,5 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Input from '@/components/u-input.vue'
+import { UInput } from '../../packages'
+const Input = UInput
 
 describe('Input', () => {
     let wrapper

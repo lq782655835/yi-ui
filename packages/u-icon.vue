@@ -3,6 +3,7 @@
         :class="'u-icon-' + name"
         class="u-icon material-icons"
         :style="style"
+        :size="size"
         v-on="listeners"
         @click="onClick"
         :href="href"
@@ -29,7 +30,7 @@ export default {
             if (this.color) {
                 style.color = this.color
             }
-            if (this.size) {
+            if (this.size && !['s', 'l'].includes(this.size)) {
                 style.fontSize = this.size
             }
             return style
@@ -43,6 +44,16 @@ export default {
 
 .u-icon {
     cursor: pointer;
+    font-size: 18px;
+    vertical-align: text-bottom; /* align icon and text*/
+
+    &[size='s'] {
+        font-size: 14px;
+    }
+
+    &[size='l'] {
+        font-size: 24px;
+    }
 
     &[disabled] {
         cursor: not-allowed;

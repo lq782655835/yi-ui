@@ -35,7 +35,7 @@
         <d-component-item name="u-input/textarea">
             <u-input v-model="inputValue" placeholder="请输入专题名" />
             <u-input minlength="1" maxlength="10" placeholder="原生长度限制" />
-            <u-input size="s" placeholder="小输入框" @click="test" />
+            <u-input size="s" placeholder="小输入框" />
             <u-input disabled placeholder="禁用输入框" />
             <br /><br />
             <u-input type="textarea" placeholder="textarea输入框" />
@@ -86,7 +86,7 @@
 
         <d-component-item name="u-layout">
             <u-layout>
-                <u-button @click="test">默认横向排列</u-button>
+                <u-button>默认横向排列</u-button>
                 <u-button>默认横向排列</u-button>
                 <u-button>默认横向排列</u-button>
             </u-layout>
@@ -129,8 +129,6 @@
             <u-button @click="modalVisible = true">visible方式打开模态框</u-button>
             <u-button @click="confirmByJS">js api方式打开Confirm模态框</u-button>
             <u-button @click="alertByJS">js api方式打开Alert模态框</u-button>
-            <u-button @click="openModalByJsAPI">js api方式打开自定义模态框</u-button>
-            <u-button @click="openModalForm">表单异步处理</u-button>
         </d-component-item>
 
         <d-component-item name="u-popper">
@@ -181,28 +179,23 @@
                 <u-tab title="普通tab3">测试3tab内容</u-tab>
             </u-tabs>
             <u-tabs :value="1">
-                <u-tab title="去往首页"></u-tab>
-                <u-tab title="去往Demo"></u-tab>
-                <u-tab title="路由tab"></u-tab>
+                <u-tab title="去往首页" to="/"></u-tab>
+                <u-tab title="去往Demo" to="/demo"></u-tab>
+                <u-tab title="去往Tab" to="/tabs"></u-tab>
             </u-tabs>
         </d-component-item>
 
         <d-component-item name="u-steps/step">
-            <u-steps>
-                <u-step title="普通step1">测试1step内容</u-step>
-                <u-step title="普通step2">测试2step内容</u-step>
-                <u-step title="普通step3">测试3step内容</u-step>
-            </u-steps>
-            <u-steps :value="1" :disabled="true">
-                <u-step title="去往首页" to="/"></u-step>
-                <u-step title="去往Demo" to="/demo"></u-step>
-                <u-step title="路由step">测试3内容</u-step>
+            <u-steps v-model="stepValue">
+                <u-step title="步骤1">测试1step内容</u-step>
+                <u-step title="步骤2">测试2step内容</u-step>
+                <u-step title="步骤3">测试3step内容</u-step>
             </u-steps>
         </d-component-item>
 
         <d-component-item name="u-table/u-pagination">
             <u-table :list="tableList">
-                <template slot-scope="{ row, rowIndex }">
+                <template slot-scope="{ row }">
                     <u-table-column label="分类" width="100px">{{ row.tab }}</u-table-column>
                     <u-table-column label="名称" width="100px">{{ row.title }}</u-table-column>
                     <u-table-column label="操作" width="60px">
@@ -273,13 +266,6 @@ export default {
         test() {
             this.radiosValue = 'value2'
             this.selectValue = 2
-            console.log(this.checkboxsList, this.checkboxsList2)
-        },
-        openModalByJsAPI() {
-            // transfer(DModalTest)({ title: 'js调用弹开模态框' }).then(() => console.log('关闭弹窗之后todo...'))
-        },
-        openModalForm() {
-            // transfer(DModalForm)({ title: '表单异步' }).then(data => console.log('拿到数据', data))
         },
         confirmByJS() {
             this.$confirm('这是一个Confirm确认框')

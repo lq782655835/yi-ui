@@ -8,7 +8,8 @@
                 v-on="listeners"
                 @click.prevent="handleClick(index, itemVM)"
             >
-                {{ itemVM.title }}
+                <u-render :vnode="itemVM.$slots.title">{{ itemVM.title }}</u-render>
+                <u-icon v-if="closable" name="close" size="s" @click.stop="close(itemVM)"></u-icon>
             </li>
         </ul>
         <div class="u-tabs-content"><slot></slot></div>
@@ -24,7 +25,8 @@ export default {
             default: 0,
             validator: value => Number.isInteger(value) && value >= 0
         },
-        disabled: { type: Boolean, default: false }
+        disabled: { type: Boolean, default: false },
+        closable: { type: Boolean, default: false }
     },
     data() {
         return {
@@ -52,6 +54,27 @@ export default {
             this.$emit('update:value', index) // allow sync api
             this.$emit('input', index) // allow v-model
             itemVM.to && itemVM.navigate() // allow router api
+        },
+
+        close(itemVM) {
+            if (this.disabled) return
+
+            let cancel = false
+            this.$emit('before-close', {
+                itemVM,
+                preventDefault: () => (cancel = true)
+            })
+            if (cancel) return
+
+            const index = this.itemVMs.indexOf(itemVM)
+            const maxLength = this.itemVMs.length
+            this.itemVMs.splice(index, 1)
+
+            if (this.activeIndex === index) {
+                this.activeIndex = index === maxLength - 1 ? index - 1 : index
+                this.$emit('update:value', index) // allow sync api
+                this.$emit('input', index) // allow v-model
+            }
         }
     }
 }
@@ -100,6 +123,12 @@ export default {
                     left: 0;
                     bottom: -2px;
                 }
+            }
+
+            .u-icon-close {
+                position: absolute;
+                right: 5px;
+                top: 5px;
             }
         }
     }
