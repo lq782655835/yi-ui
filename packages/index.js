@@ -31,6 +31,7 @@ import USteps from './u-step/u-steps'
 import UModal from './u-modal'
 import UToast from './u-toast'
 import UPopper from './u-popper'
+import UPopover from './u-popover'
 import UTooltip from './u-tooltip'
 
 import './assets/css/reset.scss'
@@ -55,6 +56,7 @@ export {
     UModal,
     UToast,
     UPopper,
+    UPopover,
     UTooltip,
     URadio,
     URadios,

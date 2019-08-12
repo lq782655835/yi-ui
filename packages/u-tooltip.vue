@@ -4,28 +4,20 @@
         :trigger="trigger"
         :placement="placement"
         :reference="reference"
+        :hover-delay="hoverDelay"
+        :offset="offset"
         :open="open"
         v-on="$listeners"
-        :disabled="disabled"
+        :disabled="disabled || !hasContent"
     >
         <slot></slot>
-        <div class="root popper" slot="popper" :merge-borders="mergeBorders">
+        <div class="root popper" slot="popper">
             <span class="arrow"></span>
             <slot name="popper">
-                <div>
-                    <div class="head" v-if="title || $slots.head || $slots.title">
-                        <slot name="head">
-                            <div class="title">
-                                <slot name="title">{{ title }}</slot>
-                            </div>
-                        </slot>
-                    </div>
-                    <div class="body" v-if="content || $slots.body || $slots.content">
-                        <slot name="body">
-                            <slot name="content">{{ content }}</slot>
-                        </slot>
-                    </div>
-                    <div class="foot" v-if="$slots.foot"><slot name="foot"></slot></div>
+                <div class="body">
+                    <slot name="body">
+                        <slot name="content">{{ content }}</slot>
+                    </slot>
                 </div>
             </slot>
         </div>
@@ -36,14 +28,22 @@
 export default {
     name: 'u-tooltip',
     props: {
-        title: String,
         content: String,
         open: { type: Boolean, default: false },
         trigger: { type: String, default: 'hover' },
         placement: { type: String, default: 'bottom-start' },
         reference: HTMLElement, // 为了方便生成指令
+        offset: { type: Number, default: 0 },
         disabled: { type: Boolean, default: false },
-        mergeBorders: { type: Boolean, default: true }
+        hoverDelay: { type: Number, default: 0 }
+    },
+    computed: {
+        hasContent() {
+            return (
+                (this.content !== undefined && this.content !== '') ||
+                this.$slots.content !== undefined
+            )
+        }
     },
     methods: {
         update() {
@@ -57,165 +57,99 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$popup-background-color: white;
-$popup-background-head-color: white;
-$popup-border-color: #dfe4ec;
-$popup-arrow-size: 8px;
-$popup-outer-arrow-size: 9px;
-$popup-arrow-offset: 16px;
+$tooltip-background-color: #333;
+$tooltip-arrow-size: 5px;
+$tooltip-arrow-offset: 10px;
 
 .root {
     position: relative;
-    min-width: 200px;
-    background: $popup-background-color;
-    border: 1px solid $popup-border-color;
+    padding: 6px 15px;
+    border-radius: 5px;
+    background: $tooltip-background-color;
+    color: white;
+    font-size: 12px;
     z-index: 7000;
-}
-
-.head {
-    padding: 6px 10px;
-    background: $popup-background-head-color;
-    border-bottom: 1px solid $popup-border-color;
-}
-
-.title {
-    font-weight: bold;
-
-    .u-icon.close {
-        position: absolute;
-        right: 8px;
-        top: 8px;
-    }
-}
-
-.body {
-    padding: 6px 10px;
-}
-
-.foot {
-    border-top: 1px solid $popup-border-color;
-    padding: 6px 10px;
 }
 
 .arrow {
     display: block;
     position: absolute;
-    border: $popup-arrow-size solid transparent;
-}
-.arrow::before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: -1;
-    border: $popup-outer-arrow-size solid transparent;
+    border: $tooltip-arrow-size solid transparent;
 }
 
 .root[x-placement^='top'] {
-    margin-bottom: $popup-arrow-size;
+    margin-bottom: $tooltip-arrow-size;
 }
 .root[x-placement^='top'] .arrow {
-    bottom: -$popup-arrow-size;
-    margin-left: -$popup-arrow-size;
-    border-width: $popup-arrow-size $popup-arrow-size 0;
-    border-top-color: $popup-background-color;
-}
-.root[x-placement^='top'] .arrow::before {
-    bottom: -1px;
-    left: -1px;
-    margin-left: -$popup-arrow-size;
-    border-width: $popup-outer-arrow-size $popup-outer-arrow-size 0;
-    border-top-color: $popup-border-color;
+    bottom: -$tooltip-arrow-size;
+    margin-left: -$tooltip-arrow-size;
+    border-width: $tooltip-arrow-size $tooltip-arrow-size 0;
+    border-top-color: $tooltip-background-color;
 }
 .root[x-placement='top-start'] .arrow {
-    left: $popup-arrow-offset;
+    left: $tooltip-arrow-offset;
 }
 .root[x-placement='top'] .arrow {
     left: 50%;
 }
 .root[x-placement='top-end'] .arrow {
-    right: $popup-arrow-offset;
+    right: $tooltip-arrow-offset;
 }
 
 .root[x-placement^='bottom'] {
-    margin-top: $popup-arrow-size;
+    margin-top: $tooltip-arrow-size;
 }
 .root[x-placement^='bottom'] .arrow {
-    top: -$popup-arrow-size;
-    margin-left: -$popup-arrow-size;
-    border-width: 0 $popup-arrow-size $popup-arrow-size;
-    border-bottom-color: $popup-background-color;
-}
-.root[x-placement^='bottom'] .arrow::before {
-    top: -1px;
-    left: -1px;
-    margin-left: -$popup-arrow-size;
-    border-width: 0 $popup-outer-arrow-size $popup-outer-arrow-size;
-    border-bottom-color: $popup-border-color;
+    top: -$tooltip-arrow-size;
+    margin-left: -$tooltip-arrow-size;
+    border-width: 0 $tooltip-arrow-size $tooltip-arrow-size;
+    border-bottom-color: $tooltip-background-color;
 }
 .root[x-placement='bottom-start'] .arrow {
-    left: $popup-arrow-offset;
+    left: $tooltip-arrow-offset;
 }
 .root[x-placement='bottom'] .arrow {
     left: 50%;
 }
 .root[x-placement='bottom-end'] .arrow {
-    right: $popup-arrow-offset;
+    right: $tooltip-arrow-offset;
 }
 
 .root[x-placement^='left'] {
-    margin-right: $popup-arrow-size;
+    margin-right: $tooltip-arrow-size;
 }
 .root[x-placement^='left'] .arrow {
-    right: -$popup-arrow-size;
-    margin-top: -$popup-arrow-size;
-    border-width: $popup-arrow-size 0 $popup-arrow-size $popup-arrow-size;
-    border-left-color: $popup-background-color;
-}
-.root[x-placement^='left'] .arrow::before {
-    top: -1px;
-    right: -1px;
-    margin-top: -$popup-arrow-size;
-    border-width: $popup-outer-arrow-size 0 $popup-outer-arrow-size $popup-outer-arrow-size;
-    border-left-color: $popup-border-color;
+    right: -$tooltip-arrow-size;
+    margin-top: -$tooltip-arrow-size;
+    border-width: $tooltip-arrow-size 0 $tooltip-arrow-size $tooltip-arrow-size;
+    border-left-color: $tooltip-background-color;
 }
 .root[x-placement='left-start'] .arrow {
-    top: $popup-arrow-offset;
+    top: $tooltip-arrow-offset;
 }
 .root[x-placement='left'] .arrow {
     top: 50%;
 }
 .root[x-placement='left-end'] .arrow {
-    bottom: $popup-arrow-offset;
+    bottom: $tooltip-arrow-offset;
 }
 
 .root[x-placement^='right'] {
-    margin-left: $popup-arrow-size;
+    margin-left: $tooltip-arrow-size;
 }
 .root[x-placement^='right'] .arrow {
-    left: -$popup-arrow-size;
-    margin-top: -$popup-arrow-size;
-    border-width: $popup-arrow-size $popup-arrow-size $popup-arrow-size 0;
-    border-right-color: $popup-background-color;
-}
-.root[x-placement^='right'] .arrow::before {
-    top: -1px;
-    left: -1px;
-    margin-top: -$popup-arrow-size;
-    border-width: $popup-outer-arrow-size $popup-outer-arrow-size $popup-outer-arrow-size 0;
-    border-right-color: $popup-border-color;
+    left: -$tooltip-arrow-size;
+    margin-top: -$tooltip-arrow-size;
+    border-width: $tooltip-arrow-size $tooltip-arrow-size $tooltip-arrow-size 0;
+    border-right-color: $tooltip-background-color;
 }
 .root[x-placement='right-start'] .arrow {
-    top: $popup-arrow-offset;
+    top: $tooltip-arrow-offset;
 }
 .root[x-placement='right'] .arrow {
     top: 50%;
 }
 .root[x-placement='right-end'] .arrow {
-    bottom: $popup-arrow-offset;
-}
-
-.root[merge-borders] .arrow ~ * {
-    border: none;
-    box-shadow: none;
+    bottom: $tooltip-arrow-offset;
 }
 </style>
