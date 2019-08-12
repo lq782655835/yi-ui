@@ -10,7 +10,23 @@ export default [
         component: _import('demo')
     },
     {
+        path: '/button',
+        component: _md('button')
+    },
+    {
+        path: '/icon',
+        component: _md('icon')
+    },
+    {
+        path: '/input',
+        component: _md('input')
+    },
+    {
         path: '/link',
         component: _md('link')
+    },
+    {
+        path: '/tabs',
+        component: _md('tabs')
     }
 ]

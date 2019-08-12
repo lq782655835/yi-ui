@@ -14,19 +14,18 @@
     "keywords": [
         "vue",
         "vue-component",
-        "component",
         "components",
         "ui"
     ],
     "description": "a lightweight ui for vue2.x",
     "husky": {
         "hooks": {
-            "pre-commit": "npm run format && git add ."
+            "pre-commit": "npm run format && npm run lint && git add ."
         }
     },
     "scripts": {
         "dev": "vue-cli-service serve --open",
-        "build": "vue-cli-service build --target lib --name YIUI ./src/entry.js",
+        "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "build:site": "site=true vue-cli-service build",
         "release": "npm run build && node ./scripts/public.js",
         "release:site": "npm run build:site && node ./scripts/site.js",
@@ -74,7 +73,9 @@
             "plugin:vue/essential",
             "eslint:recommended"
         ],
-        "rules": {},
+        "rules": {
+            "no-console": "off"
+        },
         "parserOptions": {
             "parser": "babel-eslint"
         }

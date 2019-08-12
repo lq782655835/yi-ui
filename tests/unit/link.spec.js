@@ -1,5 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Link from '@/components/u-link.vue'
+import { ULink } from '../../packages'
+const Link = ULink
 
 describe('Link', () => {
     let wrapper

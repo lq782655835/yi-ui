@@ -12,13 +12,15 @@
 </template>
 ```
 
-## color/size
+## size/color
 ```vue
 <template>
     <div>
-        <u-icon name="edit">导航</u-icon>
-        <u-icon size="40px" name="edit">导航</u-icon>
-        <u-icon size="40px" color="#F30000" name="edit">导航</u-icon>
+        <u-icon size="s" name="edit" />
+        <u-icon name="edit" />
+        <u-icon size="l" name="edit" />
+        <u-icon size="40px" name="edit" />
+        <u-icon size="40px" color="#F30000" name="edit" />
     </div>
 </template>
 ```
@@ -36,7 +38,7 @@
 ## disabled
 ```vue
 <template>
-  <u-icon disabled name="backup">禁用</u-icon>
+  <u-icon name="backup" disabled />
 </template>
 ```
 

@@ -1,5 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Select from '@/components/u-select.vue'
+import { USelect } from '../../packages'
+const Select = USelect
 
 describe('Select', () => {
     let wrapper

@@ -1,5 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import Icon from '@/components/u-icon.vue'
+import { UIcon } from '../../packages'
+const Icon = UIcon
 
 describe('Icon', () => {
     let wrapper
