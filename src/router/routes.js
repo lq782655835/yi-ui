@@ -28,5 +28,9 @@ export default [
     {
         path: '/tabs',
         component: _md('tabs')
+    },
+    {
+        path: '/steps',
+        component: _md('steps')
     }
 ]
