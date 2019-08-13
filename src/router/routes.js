@@ -32,5 +32,13 @@ export default [
     {
         path: '/steps',
         component: _md('steps')
+    },
+    {
+        path: '/popover',
+        component: _md('popover')
+    },
+    {
+        path: '/tooltip',
+        component: _md('tooltip')
     }
 ]
