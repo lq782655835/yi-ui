@@ -78,6 +78,16 @@
 </template>
 ```
 
+## 按钮组
+```vue
+<template>
+  <u-button-group>
+    <u-button type="primary" icon="share">上一页</u-button>
+    <u-button type="primary" icon="share">下一页</u-button>
+  </u-button-group>
+</template>
+```
+
 ## disabled
 ```vue
 <template>

@@ -8,16 +8,10 @@ import 'highlight.js/styles/atom-one-dark.css'
 
 // 注册全局组件
 import * as YIUI from '../packages'
-Object.keys(YIUI).forEach(key => {
-    Vue.component(key, YIUI[key])
-    if (key === 'UToast') {
-        Vue.prototype.$toast = YIUI[key].toast
-    }
-    if (key === 'UModal') {
-        Vue.prototype.$confirm = YIUI[key].confirm
-        Vue.prototype.$alert = YIUI[key].alert
-    }
-})
+Object.keys(YIUI).forEach(key => Vue.component(key, YIUI[key]))
+Vue.prototype.$toast = YIUI['UToast'].toast
+Vue.prototype.$confirm = YIUI['UModal'].confirm
+Vue.prototype.$confirm = YIUI['UModal'].confirm
 
 Vue.config.productionTip = false
 

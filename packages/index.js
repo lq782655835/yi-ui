@@ -2,6 +2,7 @@
 import URender from './u-render'
 import ULink from './u-link'
 import UButton from './u-button'
+import UButtonGroup from './u-button-group'
 import UIcon from './u-icon'
 import ULayout from './u-layout'
 
@@ -40,6 +41,7 @@ export {
     URender,
     ULink,
     UButton,
+    UButtonGroup,
     UInput,
     USelect,
     UCheckbox,
