@@ -69,7 +69,7 @@ $button-size: 18px;
 
         .button {
             transition: all 0.2s ease;
-            left: calc(24px);
+            left: 24px;
         }
     }
 

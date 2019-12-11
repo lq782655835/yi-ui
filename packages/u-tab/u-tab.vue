@@ -1,5 +1,5 @@
 <template>
-    <div v-show="show"><slot></slot></div>
+    <div v-if="!lazy || loaded || show" v-show="show" class="u-tab"><slot></slot></div>
 </template>
 
 <script>
@@ -9,16 +9,22 @@ export default {
     name: 'u-tab',
     mixins: [ULink],
     props: {
-        title: { type: String, default: '' }
+        title: { type: String, default: '' },
+        lazy: { type: Boolean, default: false }
     },
     data() {
         return {
-            index: 0
+            index: -1,
+            loaded: false
         }
     },
     computed: {
         show() {
-            return parseInt(this.index) === parseInt(this.$parent.activeIndex)
+            const active = parseInt(this.index) === parseInt(this.$parent.activeIndex)
+            if (active) {
+                this.loaded = true
+            }
+            return active
         }
     },
     created() {
@@ -28,7 +34,7 @@ export default {
     },
     mounted() {
         this.$nextTick(() => {
-            for (var c in this.$parent.$children) {
+            for (let c in this.$parent.$children) {
                 if (this.$parent.$children[c].$el === this.$el) {
                     this.index = c
                     break
