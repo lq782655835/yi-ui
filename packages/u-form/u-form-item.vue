@@ -23,6 +23,11 @@ export default {
         required: Boolean
     },
     inject: ['uForm'],
+    provide() {
+        return {
+            elFormItem: this
+        }
+    },
     computed: {
         leftSty() {
             return {
@@ -50,17 +55,28 @@ export default {
     mounted() {
         if (this.prop) {
             this.uForm.$emit('form.addField', this)
-            this.$once('hook:beforeDestroy', () => {
-                this.uForm.$emit('form.removeField', this)
-            })
+            this.$once('hook:beforeDestroy', () => this.uForm.$emit('form.removeField', this))
+
+            this.addValidateEvents()
         }
     },
     methods: {
-        validate(callback = () => {}) {
+        validate(trigger, callback = () => {}) {
             this.validateState = 'validating'
+            let rulesByFilterTrigger = trigger => {
+                const rules = this.getRules()
+                const filterTriggerRules = rules.filter(rule => {
+                    let { trigger: innerTrigger } = rule
+                    if (trigger === '' || !innerTrigger) return true
+                    return Array.isArray(innerTrigger)
+                        ? innerTrigger.includes(trigger)
+                        : innerTrigger === trigger
+                })
+                return filterTriggerRules
+            }
 
             var validator = new Schema({
-                [this.prop]: this.uForm.rules[this.prop] // TODO: nest prop
+                [this.prop]: rulesByFilterTrigger(trigger) // TODO: nest prop
             })
             validator.validate(
                 { [this.prop]: this.fieldValue }, // TODO: nest prop
@@ -71,6 +87,16 @@ export default {
                     callback(this.validateMessage, invalidFields)
                 }
             )
+        },
+        addValidateEvents() {
+            let rules = this.getRules()
+            if (rules.length === 0) return
+
+            this.$on('el.form.blur', () => this.validate('blur'))
+            this.$on('el.form.change', () => this.validate('change'))
+        },
+        getRules() {
+            return [].concat(this.uForm.rules[this.prop])
         }
     }
 }

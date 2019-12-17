@@ -6,6 +6,7 @@
             v-bind="$attrs"
             v-on="listeners"
             @input="onInput"
+            @blur="handleBlur"
             :disabled="disabled"
             class="input"
         />
@@ -15,6 +16,7 @@
             v-bind="$attrs"
             v-on="listeners"
             @input="onInput"
+            @blur="handleBlur"
             :disabled="disabled"
             class="input"
         />
@@ -29,6 +31,14 @@ export default {
         value: { type: [String, Number] },
         disabled: { type: Boolean, default: false }
     },
+    inject: {
+        elForm: {
+            default: ''
+        },
+        elFormItem: {
+            default: ''
+        }
+    },
     data() {
         return {
             inputValue: this.value
@@ -41,6 +51,7 @@ export default {
         listeners() {
             const listeners = Object.assign({}, this.$listeners)
             delete listeners['input']
+            delete listeners['blur']
             return listeners
         }
     },
@@ -53,6 +64,26 @@ export default {
         onInput() {
             this.$emit('update:value', this.inputValue) // allow sync api
             this.$emit('input', this.inputValue) // allow v-model
+        },
+        handleBlur(event) {
+            this.$emit('blur', event)
+            // support form-item validate
+            this.dispatch('u-form-item', 'el.form.blur', [this.value])
+        },
+        dispatch(componentName, eventName, params) {
+            var parent = this.$parent || this.$root
+            var name = parent.$options.name
+
+            while (parent && (!name || name !== componentName)) {
+                parent = parent.$parent
+
+                if (parent) {
+                    name = parent.$options.componentName
+                }
+            }
+            if (parent) {
+                parent.$emit.apply(parent, [eventName].concat(params))
+            }
         }
     }
 }

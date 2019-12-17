@@ -63,9 +63,10 @@ export default {
             let valid = true // 是否全部通过
             let invalidFields = {}
             this.fields.forEach((field, index) => {
-                field.validate((msg, fields) => {
+                field.validate('', (msg, fields) => {
                     if (msg) valid = false
                     invalidFields = { ...invalidFields, ...fields }
+
                     // 由于validate是异步，所有异步都执行后再callback
                     if (index === this.fields.length - 1) {
                         callback && callback(valid, invalidFields)
