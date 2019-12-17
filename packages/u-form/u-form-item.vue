@@ -6,31 +6,72 @@
         </div>
         <div class="item item-value" :style="rightSty">
             <slot></slot>
-            <div v-if="tip" class="tip">{{ tip }}</div>
-            <div class="error">{{ error }}</div>
+            <slot v-if="validateState === 'error'" name="error" :error="validateMessage">
+                <div class="error">{{ validateMessage }}</div>
+            </slot>
         </div>
     </div>
 </template>
 
 <script>
+import Schema from 'async-validator'
 export default {
     name: 'u-form-item',
     props: {
         label: String,
-        error: String,
-        required: Boolean,
-        tip: String
+        prop: String, // model key
+        required: Boolean
+    },
+    inject: ['uForm'],
+    computed: {
+        leftSty() {
+            return {
+                width: this.uForm.labelWidth
+            }
+        },
+        rightSty() {
+            return {
+                width: this.uForm.contentWidth
+            }
+        },
+        fieldValue() {
+            const model = this.uForm.model
+            if (!model || !this.prop) return
+
+            return model[this.prop]
+        }
     },
     data() {
         return {
-            leftSty: {},
-            rightSty: {}
+            validateState: '',
+            validateMessage: ''
         }
     },
-    inject: ['uForm'],
-    created() {
-        this.uForm.labelWidth && (this.leftSty.width = this.uForm.labelWidth)
-        this.uForm.contentWidth && (this.rightSty.width = this.uForm.contentWidth)
+    mounted() {
+        if (this.prop) {
+            this.uForm.$emit('form.addField', this)
+            this.$once('hook:beforeDestroy', () => {
+                this.uForm.$emit('form.removeField', this)
+            })
+        }
+    },
+    methods: {
+        validate(callback = () => {}) {
+            this.validateState = 'validating'
+
+            var validator = new Schema({
+                [this.prop]: this.uForm.rules[this.prop] // TODO: nest prop
+            })
+            validator.validate(
+                { [this.prop]: this.fieldValue }, // TODO: nest prop
+                { firstFields: true },
+                (errors, invalidFields) => {
+                    this.validateState = !errors ? 'success' : 'error'
+                    this.validateMessage = errors ? errors[0].message : ''
+                    callback(this.validateMessage, invalidFields)
+                }
+            )
+        }
     }
 }
 </script>
@@ -62,7 +103,6 @@ export default {
     }
     .item-value {
         position: relative;
-        // width: calc(100% - 120px);
         line-height: 36px;
         .error {
             position: absolute;

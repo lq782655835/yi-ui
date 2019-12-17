@@ -22,7 +22,7 @@ export default {
         show() {
             const active = parseInt(this.index) === parseInt(this.$parent.activeIndex)
             if (active) {
-                this.loaded = true
+                this.loaded = true // eslint-disable-line
             }
             return active
         }

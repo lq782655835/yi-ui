@@ -28,11 +28,53 @@ export default {
         labelWidth: String,
         contentWidth: String,
         okButton: { type: String, default: '确定' },
-        cancelButton: { type: String, default: '取消' }
+        cancelButton: { type: String, default: '取消' },
+        model: Object, // form模型
+        rules: Object
     },
     provide() {
         return {
             uForm: this
+        }
+    },
+    data() {
+        return {
+            fields: [] // 需要prop验证的fields
+        }
+    },
+    created() {
+        this.$on('form.addField', field => this.fields.push(field))
+        this.$on('form.removeField', field => this.fields.splice(this.fields.indexOf(field), 1))
+    },
+    methods: {
+        validate(callback) {
+            // promise,根据将来的callback，来确定resolve或者reject
+            let promise
+            if (window.Promise) {
+                promise = new window.Promise((resolve, reject) => {
+                    callback = valid => (valid ? resolve(valid) : reject(valid))
+                })
+            }
+
+            if (this.fields.length === 0) {
+                callback && callback(true)
+            }
+
+            let valid = true // 是否全部通过
+            let invalidFields = {}
+            this.fields.forEach((field, index) => {
+                field.validate((msg, fields) => {
+                    if (msg) valid = false
+                    invalidFields = { ...invalidFields, ...fields }
+                    // 由于validate是异步，所有异步都执行后再callback
+                    if (index === this.fields.length - 1) {
+                        callback && callback(valid, invalidFields)
+                    }
+                })
+            })
+
+            // 支持promise
+            if (promise) return promise
         }
     }
 }

@@ -106,9 +106,20 @@
         </d-component-item>
 
         <d-component-item name="u-form">
-            <u-form labelWidth="200px" title="表单标题" @save="test">
-                <u-form-item label="姓名" error="请填写姓名" required> <u-input /> </u-form-item>
-                <u-form-item label="年龄" required tip="仅支持数字"> <u-input /> </u-form-item>
+            <u-form
+                ref="form"
+                :model="model"
+                :rules="rules"
+                labelWidth="200px"
+                title="表单标题"
+                @save="test"
+            >
+                <u-form-item label="姓名" error="请填写姓名" required prop="name">
+                    <u-input v-model="model.name" />
+                </u-form-item>
+                <u-form-item label="年龄" required tip="仅支持数字" prop="age">
+                    <u-input v-model="model.age" />
+                </u-form-item>
                 <u-form-item label="性别" error="请填写性别">
                     <u-select v-model="selectValue" :list="selectList" />
                 </u-form-item>
@@ -215,7 +226,6 @@
 
 <script>
 import DComponentItem from '@/components/d-component-item'
-
 export default {
     components: { DComponentItem },
     data() {
@@ -257,15 +267,40 @@ export default {
             ],
             radioValue: false,
             radiosValue: 'value1',
-            radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }],
+            radiosList: [
+                { label: '选项1', value: 'value1' },
+                { label: '选项2', value: 'value2' }
+            ],
             tabValue: 0,
-            stepValue: 0
+            stepValue: 0,
+            // rule
+            rules: {
+                name: {
+                    type: 'string',
+                    required: true,
+                    validator: (rule, value) => value === 'muji'
+                },
+                age: {
+                    type: 'number',
+                    asyncValidator: (rule, value) => {
+                        return new Promise((resolve, reject) => {
+                            if (value < 18) {
+                                reject('too young') // reject with error message
+                            } else {
+                                resolve()
+                            }
+                        })
+                    }
+                }
+            },
+            model: { name: '', age: '' }
         }
     },
     methods: {
         test() {
             this.radiosValue = 'value2'
             this.selectValue = 2
+            this.$refs.form.validate().then(isValid => console.log(isValid, 123))
         },
         confirmByJS() {
             this.$confirm('这是一个Confirm确认框')

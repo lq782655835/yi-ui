@@ -35,6 +35,7 @@
         "github": "sh ./scripts/deploy.sh"
     },
     "dependencies": {
+        "async-validator": "^3.2.3",
         "highlight.js": "^9.15.8",
         "material-design-icons": "^3.0.1",
         "popper.js": "^1.15.0",
