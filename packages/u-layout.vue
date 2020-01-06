@@ -14,8 +14,8 @@
 export default {
     name: 'u-layout'
     // props: {
-    //     // flow属性集：dir、display、gap、align
-    //     // flex属性集：dir、main(主轴)、cross(交叉轴)、display、gap
+    //     // flow属性集：dir、gap、align、display
+    //     // flex属性集：dir、flex(main(主轴)、cross(交叉轴))
     //     dir: { type: String, default: 'h', validator: value => ['h', 'v'].includes(value) },
     //     flex: { type: String }
     // }

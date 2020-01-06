@@ -257,7 +257,10 @@ export default {
             ],
             radioValue: false,
             radiosValue: 'value1',
-            radiosList: [{ label: '选项1', value: 'value1' }, { label: '选项2', value: 'value2' }],
+            radiosList: [
+                { label: '选项1', value: 'value1' },
+                { label: '选项2', value: 'value2' }
+            ],
             tabValue: 0,
             stepValue: 0
         }

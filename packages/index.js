@@ -37,7 +37,7 @@ import UTooltip from './u-tooltip'
 
 import './assets/css/reset.scss'
 
-export {
+const components = {
     URender,
     ULink,
     UButton,
@@ -67,4 +67,22 @@ export {
     UFormItem,
     UCrumb,
     UCrumbItem
+}
+
+const install = function(Vue, opts = {}) {
+    if (install.installed) return
+
+    Object.keys(components).forEach(key => Vue.component(key, components[key]))
+    Vue.prototype.$toast = components['UToast'].toast
+    Vue.prototype.$confirm = components['UModal'].confirm
+    Vue.prototype.$alert = components['UModal'].alert
+}
+
+// auto install
+if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue)
+}
+
+export default {
+    install
 }
