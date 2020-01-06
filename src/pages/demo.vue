@@ -210,6 +210,7 @@
         <u-modal :visible.sync="modalVisible" title="测试模态框">
             这里可以随意自定义html内容
         </u-modal>
+        <u-back-top />
     </div>
 </template>
 

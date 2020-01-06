@@ -35,6 +35,9 @@ import UPopper from './u-popper'
 import UPopover from './u-popover'
 import UTooltip from './u-tooltip'
 
+import UDivider from './u-divider'
+import UBackTop from './u-back-top'
+
 import './assets/css/reset.scss'
 
 const components = {
@@ -66,7 +69,9 @@ const components = {
     UForm,
     UFormItem,
     UCrumb,
-    UCrumbItem
+    UCrumbItem,
+    UDivider,
+    UBackTop
 }
 
 const install = function(Vue, opts = {}) {
