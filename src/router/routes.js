@@ -40,5 +40,13 @@ export default [
     {
         path: '/tooltip',
         component: _md('tooltip')
+    },
+    {
+        path: '/backtop',
+        component: _md('backtop')
+    },
+    {
+        path: '/divider',
+        component: _md('divider')
     }
 ]

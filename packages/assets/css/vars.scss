@@ -15,3 +15,132 @@ $tip-color: #CCCCCC;        // input 提示字符颜色
 
 // mixin
 $colors: (primary: $primary-color, success: $success-color, danger: $danger-color, warning: $warning-color, info: $info-color);
+
+$--color-text-primary: #303133 !default;
+
+// // Base
+// $body-background        : #fff;
+// $component-background   : #fff;
+// // @font-family            : "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+// // @code-family            : Consolas,Menlo,Courier,monospace;
+// $title-color            : #17233d;
+// $text-color             : #515a6e;
+// $font-size-base         : 14px;
+// $font-size-small        : 12px;
+// $font-size-large        : $font-size-base + 2px;
+// $line-height-base       : 1.5;
+// $line-height-computed   : floor(($font-size-base * $line-height-base));
+// $border-radius-base     : 6px;
+// $border-radius-small    : 4px;
+// $cursor-disabled        : not-allowed;
+
+// // Border color
+// $border-color-base      : #dcdee2;  // outside
+// $border-color-split     : #e8eaec;  // inside
+// $border-width-base      : 1px;            // width of the border for a component
+// $border-style-base      : solid;          // style of a components border
+
+$namespace: 'u';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+
+/* BEM support Func
+ -------------------------- */
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+
+  @if str-index($selector, ':') {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function hitAllSpecialNestRule($selector) {
+
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
+/* BEM support Mixin
+ -------------------------- */
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}

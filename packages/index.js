@@ -38,7 +38,7 @@ import UTooltip from './u-tooltip'
 import UDivider from './u-divider'
 import UBackTop from './u-back-top'
 
-import './assets/css/reset.scss'
+import './assets/css/index.scss'
 
 const components = {
     URender,

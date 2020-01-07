@@ -19,7 +19,7 @@
     "description": "a lightweight ui for vue2.x",
     "husky": {
         "hooks": {
-            "pre-commit": "npm run format && npm run lint && git add ."
+            "pre-commit": "npm run format && npm run lint"
         }
     },
     "scripts": {
