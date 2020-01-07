@@ -58,7 +58,7 @@
                 <li><router-link to="/list">List</router-link></li>
             </ul>
         </nav>
-        <transition name="fade-in-linear">
+        <transition name="fade-in" mode="out-in">
             <router-view />
         </transition>
     </div>

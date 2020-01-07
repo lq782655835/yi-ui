@@ -48,5 +48,9 @@ export default [
     {
         path: '/divider',
         component: _md('divider')
+    },
+    {
+        path: '/transition',
+        component: _md('transition')
     }
 ]

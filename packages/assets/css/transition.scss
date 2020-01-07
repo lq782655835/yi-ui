@@ -6,9 +6,8 @@ $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 3
   transition: opacity 200ms linear;
 }
 .fade-in-linear-enter,
-.fade-in-linear-leave,
-.fade-in-linear-leave-active {
-  opacity: 0;
+.fade-in-linear-leave-to{
+  opacity: 0.3;
 }
 
 .fade-in-enter-active,
@@ -16,8 +15,8 @@ $--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 3
   transition: all .3s cubic-bezier(.55,0,.1,1);
 }
 .fade-in-enter,
-.fade-in-leave-active {
-  opacity: 0;
+.fade-in-leave-to {
+  opacity: 0.3;
 }
 
 /* zoom transition */

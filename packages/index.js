@@ -37,6 +37,7 @@ import UTooltip from './u-tooltip'
 
 import UDivider from './u-divider'
 import UBackTop from './u-back-top'
+import UTransition from './u-transition.js'
 
 import './assets/css/index.scss'
 
@@ -71,7 +72,8 @@ const components = {
     UCrumb,
     UCrumbItem,
     UDivider,
-    UBackTop
+    UBackTop,
+    UTransition
 }
 
 const install = function(Vue, opts = {}) {
