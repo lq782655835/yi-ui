@@ -31,13 +31,16 @@
         "format": "prettier --write './**/*.{js,ts,vue,json}'",
         "test:unit": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint --fix",
-        "github": "sh ./scripts/deploy.sh"
+        "github": "sh ./scripts/deploy.sh",
+        "docs:dev": "vuepress dev docs"
     },
     "dependencies": {
         "highlight.js": "^9.15.8",
         "material-design-icons": "^3.0.1",
         "popper.js": "^1.15.0",
-        "vue": "^2.5.17",
+        "vue": "2.6.11",
+        "vuepress": "^1.2.0",
+        "vuepress-plugin-demo-block": "^0.7.2",
         "yi-ui": "0.2.9"
     },
     "devDependencies": {
@@ -62,7 +65,7 @@
         "shelljs": "^0.8.3",
         "vue-jest": "^3.0.4",
         "vue-router": "^3.0.7",
-        "vue-template-compiler": "^2.5.17"
+        "vue-template-compiler": "2.6.11"
     },
     "eslintConfig": {
         "root": true,

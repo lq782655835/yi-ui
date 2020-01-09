@@ -2,6 +2,7 @@
 
 ## 基本使用
 
+::: demo
 ```vue
 <template>
   <u-input v-model="inputValue" @input="changedInput"/>
@@ -22,42 +23,63 @@ export default {
 }
 </script>
 ```
+:::
 
 ## 原生属性
 
 原生minlength/maxlength/placeholder
+::: demo
 ```vue
 <template>
   <u-input minlength="1" maxlength="10" placeholder="原生长度限制" />
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## size
+::: demo
 ```vue
 <template>
-  <div>
+  <u-layout dir="v">
     <u-input size="l" placeholder="大"/>
     <u-input placeholder="中"/>
     <u-input size="s" placeholder="小"/>
-  </div>
+  </u-layout>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## disabled
 
+::: demo
 ```vue
 <template>
   <u-input disabled placeholder="禁用"/>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## textarea
 
+::: demo
 ```vue
 <template>
   <u-input type="textarea"/>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## 属性设置
 > 继承原生input组件参数

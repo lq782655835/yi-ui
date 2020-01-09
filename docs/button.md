@@ -1,5 +1,8 @@
 # Button
+
 ## 基本使用
+
+::: demo
 ```vue
 <template>
   <u-layout dir="v">
@@ -33,9 +36,14 @@
     </u-layout>
   </u-layout>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## icon
+::: demo
 ```vue
 <template>
     <div>
@@ -46,9 +54,14 @@
       <u-button type="primary">上传 <u-icon name="backup" /></u-button>
     </div>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## to/href
+::: demo
 ```vue
 <template>
     <div>
@@ -56,9 +69,14 @@
         <u-button href="http://www.baidu.com" type="primary">对外导航按钮</u-button>
     </div>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## size
+::: demo
 ```vue
 <template>
   <u-layout dir="v">
@@ -76,9 +94,14 @@
     </u-layout>
   </u-layout>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## 按钮组
+::: demo
 ```vue
 <template>
   <u-button-group>
@@ -86,14 +109,23 @@
     <u-button type="primary" icon="share">下一页</u-button>
   </u-button-group>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## disabled
+::: demo
 ```vue
 <template>
   <u-button disabled>禁用按钮</u-button>
 </template>
+<script>
+export default {}
+</script>
 ```
+:::
 
 ## 属性设置
 
