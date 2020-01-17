@@ -1,14 +1,7 @@
 module.exports = {
     title: '文档中心',
     description: 'component lib',
-    head: [
-        ['script', { src: 'https://unpkg.com/vue/dist/vue.js' }]
-        // ['script', { src: 'https://raw.githubusercontent.com/lq782655835/yi-ui/master/dist/YIUI.umd.js' }],
-        // ['link', {
-        //     type: 'text/css',
-        //     rel: 'stylesheet',
-        //     href: 'https://raw.githubusercontent.com/lq782655835/yi-ui/master/dist/YIUI.css' }],
-    ],
+    head: [['script', { src: 'https://unpkg.com/vue/dist/vue.js' }]],
     base: '/yi-ui/',
     themeConfig: {
         sidebar: 'auto'

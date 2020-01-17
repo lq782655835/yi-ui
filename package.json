@@ -19,20 +19,18 @@
     "description": "a lightweight ui for vue2.x",
     "husky": {
         "hooks": {
-            "pre-commit": "npm run format && npm run lint"
+            "pre-commit": "npm run format && npm run lint && git add ."
         }
     },
     "scripts": {
-        "dev": "vue-cli-service serve --open",
+        "dev": "vue-cli-service serve --open ./examples/main.js",
         "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
-        "release:site": "npm run build:site && node ./scripts/site.js",
-        "release:npm": "npm run build && node ./scripts/public.js",
-        "build:site": "site=true vue-cli-service build",
-        "format": "prettier --write './**/*.{js,ts,vue,json}'",
-        "test:unit": "vue-cli-service test:unit",
-        "lint": "vue-cli-service lint --fix",
-        "github": "sh ./scripts/deploy.sh",
-        "docs:dev": "vuepress dev docs"
+        "lint": "vue-cli-service lint",
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs",
+        "ghpages": "gh-pages -d docs/.vuepress/dist",
+        "release-it": "release-it",
+        "format": "prettier --write './**/*.{js,ts,vue,json}'"
     },
     "dependencies": {
         "highlight.js": "^9.15.8",
@@ -61,6 +59,7 @@
         "node-sass": "^4.10.0",
         "nprogress": "^0.2.0",
         "prettier": "^1.15.3",
+        "release-it": "^12.4.3",
         "sass-loader": "^7.1.0",
         "shelljs": "^0.8.3",
         "vue-jest": "^3.0.4",

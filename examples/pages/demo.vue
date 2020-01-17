@@ -215,7 +215,7 @@
 </template>
 
 <script>
-import DComponentItem from '@/components/d-component-item'
+import DComponentItem from '../components/d-component-item'
 
 export default {
     components: { DComponentItem },

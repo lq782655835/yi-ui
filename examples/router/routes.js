@@ -1,4 +1,4 @@
-const _import = file => require('@/pages/' + file + '.vue').default
+const _import = file => require('../pages/' + file + '.vue').default
 // const _md = file => require('../../docs/' + file + '.md').default
 export default [
     {
