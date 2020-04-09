@@ -3,6 +3,9 @@ const path = require('path')
 module.exports = {
     title: '组件库文档中心',
     description: '轻量级组件库',
+    head: [
+        ['script', { src: 'https://unpkg.com/vue/dist/vue.js' }],
+    ],
     markdown: {
         lineNumbers: true,
     },
@@ -14,7 +17,8 @@ module.exports = {
         docsDir: 'docs',
         docsBranch: 'master',
         nav: [
-            { text: '首页', link: '/' },
+            { text: '📃首页', link: '/' },
+            { text: '📢组件库', link: '/quickstart' },
             { text: '个人博客', link: '/team-standard/0.standard-ai-summary' },
             {
                 text: '工具',
@@ -55,7 +59,8 @@ module.exports = {
                     { text: 'mpvue', link: 'https://github.com/lq782655835/mpvue-project' },
                     { text: 'tool', link: 'https://github.com/lq782655835/json2ts' }
                 ]
-            }
+            },
+            { text: '注意点', link: '/tools' },
         ],
         sidebar: [
             {
