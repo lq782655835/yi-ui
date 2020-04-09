@@ -23,9 +23,8 @@
         "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "dev:docs": "vuepress dev docs",
         "build:docs": "vuepress build docs",
-        "release:demo": "npm run build:docs && npm run ghpages",
-        "release:lib": "release-it",
-        "ghpages": "gh-pages -d docs/.vuepress/dist",
+        "release:lib": "npm run build && release-it",
+        "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "lint": "vue-cli-service lint"
     },
     "husky": {
@@ -36,12 +35,14 @@
     "lint-staged": {
         "packages/**/*.{vue,ts,tsx,js,jsx,json}": [
             "prettier --write",
+            "npm run lint",
             "git add"
         ]
     },
     "release-it": {
         "git": {
-            "commitMessage": "chore: release v${version}"
+            "commitMessage": "chore: release v${version}",
+            "requireCleanWorkingDir": false
         }
     },
     "dependencies": {
