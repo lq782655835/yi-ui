@@ -1,7 +1,8 @@
-## transition
+## Transition
 
 ### 基础用法
 
+:::demo
 ```vue
 <template>
   <div>
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-    export default {
+export default {
     data: () => ({
       show3: true
     })
@@ -41,3 +42,4 @@
   }
 </style>
 ```
+:::

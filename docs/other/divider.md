@@ -1,4 +1,4 @@
-## Divider 分割线
+## Divider
 
 区隔内容的分割线。
 
@@ -6,6 +6,7 @@
 
 对不同章节的文本段落进行分割。
 
+::: demo
 ```vue
 <template>
   <div>
@@ -15,11 +16,13 @@
   </div>
 </template>
 ```
+:::
 
 ### 设置文案
 
 可以在分割线上自定义文案内容。
 
+::: demo
 ```vue
 <template>
   <div>
@@ -32,9 +35,11 @@
   </div>
 </template>
 ```
+:::
 
 ### 垂直分割
 
+::: demo
 ```vue
 <template>
   <div>
@@ -46,6 +51,7 @@
   </div>
 </template>
 ```
+:::
 
 ### Divider Attributes
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |

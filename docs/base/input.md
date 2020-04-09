@@ -33,9 +33,6 @@ export default {
 <template>
   <u-input minlength="1" maxlength="10" placeholder="原生长度限制" />
 </template>
-<script>
-export default {}
-</script>
 ```
 :::
 
@@ -49,9 +46,6 @@ export default {}
     <u-input size="s" placeholder="小"/>
   </u-layout>
 </template>
-<script>
-export default {}
-</script>
 ```
 :::
 
@@ -62,9 +56,6 @@ export default {}
 <template>
   <u-input disabled placeholder="禁用"/>
 </template>
-<script>
-export default {}
-</script>
 ```
 :::
 
@@ -75,9 +66,6 @@ export default {}
 <template>
   <u-input type="textarea"/>
 </template>
-<script>
-export default {}
-</script>
 ```
 :::
 

@@ -1,6 +1,7 @@
-# Step
+# Steps
 
 ## 基本用法
+:::demo
 ```vue
 <template>
     <u-steps v-model="stepValue">
@@ -31,6 +32,7 @@ export default {
 }
 </script>
 ```
+:::
 
 ## Steps Atrribute
 

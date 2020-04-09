@@ -2,6 +2,8 @@
 
 ## 基本使用
 基于material-design-icons,[更多图标](https://material.io/icons/)
+
+:::demo
 ```vue
 <template>
   <div>
@@ -10,9 +12,11 @@
     <u-icon name="face" />
   </div>
 </template>
-```
+:::
 
 ## size/color
+
+:::demo
 ```vue
 <template>
     <div>
@@ -24,8 +28,11 @@
     </div>
 </template>
 ```
+:::
 
 ## to/href
+
+:::demo
 ```vue
 <template>
     <div>
@@ -34,13 +41,17 @@
     </div>
 </template>
 ```
+:::
 
 ## disabled
+
+:::demo
 ```vue
 <template>
   <u-icon name="backup" disabled />
 </template>
 ```
+:::
 
 ## 属性设置
 | 参数 | 说明 | 类型| 可选值| 默认值|

@@ -1,6 +1,8 @@
 # Tabs
 
 ## 基本用法
+
+:::demo
 ```vue
 <template>
     <u-tabs v-model="tabValue">
@@ -18,9 +20,11 @@ export default {
 }
 </script>
 ```
+:::
 
 ## to
-``` vue
+:::demo
+```vue
 <template>
     <u-tabs :value="2">
         <u-tab title="去往首页" to="/"></u-tab>
@@ -29,8 +33,11 @@ export default {
     </u-tabs>
 </template>
 ```
+:::
 
 ## title
+
+:::demo
 ```vue
 <template>
     <u-tabs>
@@ -49,8 +56,11 @@ export default {
     </u-tabs>
 </template>
 ```
+:::
 
 ## closable
+
+:::demo
 ```vue
 <template>
     <u-tabs :closable="true">
@@ -60,6 +70,7 @@ export default {
     </u-tabs>
 </template>
 ```
+:::
 
 ## disabled
 

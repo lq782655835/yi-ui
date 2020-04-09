@@ -1,30 +1,39 @@
-# u-back-top
+# BackTop
 
 ## 基本使用
 
+::: demo
 ```vue
 <template>
-  <u-back-top :height="50"/>
+    <div>
+        <u-back-top :height="50"/>
+        滚动后右下方显示
+    <div>
 </template>
 ```
+:::
 
 ## Scope
+
+::: demo
 ``` vue
-<style scoped>
-    .top{
-        padding: 10px;
-        background: rgba(0, 153, 229, .7);
-        color: #fff;
-        text-align: center;
-        border-radius: 2px;
-    }
-</style>
 <template>
     <u-back-top :height="100" :bottom="200">
-        <div class="top">返回顶端</div>
+        <div class="backtop-self-style">返回顶端</div>
     </u-back-top>
 </template>
+
+<style>
+.backtop-self-style{
+    padding: 10px;
+    background: rgba(0, 153, 229, .7);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+}
+</style>
 ```
+:::
 
 ## API #
 ### u-back-top props #

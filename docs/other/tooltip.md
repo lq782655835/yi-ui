@@ -93,6 +93,7 @@
 ```
 
 ## hide-delay
+:::demo
 ```vue
 <template>
     <u-tooltip :hover-delay="500" placement="right" content="提示文字">
@@ -100,6 +101,7 @@
     </u-tooltip>
 </template>
 ```
+:::
 
 ## Tooltip Atrribute
 

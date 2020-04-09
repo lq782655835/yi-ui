@@ -1,6 +1,7 @@
 # Link
 
 ## 基本用法
+:::demo
 ```vue
 <template>
     <div>
@@ -13,8 +14,10 @@
     </div>
 </template>
 ```
+:::
 
 ## to/href
+:::demo
 ```vue
 <template>
     <div>
@@ -23,20 +26,25 @@
     </div>
 </template>
 ```
+:::
 
 ## icon
+:::demo
 ```vue
 <template>
   <u-link icon="edit" to="/components/unit/button">图标</u-link>
 </template>
 ```
+:::
 
 ## disabled
+:::demo
 ```vue
 <template>
   <u-link disabled>禁用导航</u-link>
 </template>
 ```
+:::
 
 ## 使用参数
 
