@@ -23,9 +23,10 @@
         "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "dev:docs": "vuepress dev docs",
         "build:docs": "vuepress build docs",
-        "lint": "vue-cli-service lint",
+        "release:demo": "npm run build:docs && npm run ghpages",
+        "release:lib": "release-it",
         "ghpages": "gh-pages -d docs/.vuepress/dist",
-        "release-it": "release-it"
+        "lint": "vue-cli-service lint"
     },
     "husky": {
         "hooks": {
@@ -37,6 +38,11 @@
             "prettier --write",
             "git add"
         ]
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: release v${version}"
+        }
     },
     "dependencies": {
         "highlight.js": "^9.15.8",

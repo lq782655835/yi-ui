@@ -17,7 +17,7 @@
 
 组件库的安装与引入有两种种方式。推荐使用 npm 的安装方式，可以和 Webpack 以及其他 npm 生态很好地结合使用。
 
-## 1. NPM
+### 1. NPM
 
 ### 安装
 
@@ -38,7 +38,7 @@ Vue.use(YIUI)
 <u-button type="primary">click me</u-button>
 ```
 
-## 2. CDN
+### 2. CDN
 
 目前可以通过 [unpkg.com/yi-ui](https://unpkg.com/browse/yi-ui/) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
@@ -49,7 +49,7 @@ Vue.use(YIUI)
 <script src="https://unpkg.com/browse/yi-ui/dist/YIUI.umd.min.js"></script>
 ```
 
-## 3. Components列表
+## 组件列表列表
 
 * 基础组件
     * [u-link](../packages/u-link.vue)
@@ -73,6 +73,6 @@ Vue.use(YIUI)
     * [u-toast](../packages/u-toast.vue)
     * [u-tooltip/u-popper](../packages/u-tooltip.vue)
 
-## 4. Preview
+## 预览
 
 ![image](https://user-images.githubusercontent.com/6310131/56558066-fbe16880-65cf-11e9-9940-07c7be20834c.png)
