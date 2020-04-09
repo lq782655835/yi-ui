@@ -91,7 +91,7 @@ module.exports = {
     },
     plugins: [
         [
-            'demo-block',
+            'leo-demo-block',
             {
                 settings: {
                     codepen: true
