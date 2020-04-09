@@ -78,7 +78,8 @@
         "vue-jest": "^3.0.4",
         "vue-router": "^3.0.7",
         "vue-template-compiler": "2.6.11",
-        "vuepress-plugin-leo-demo-block": "^0.1.0"
+        "vuepress-plugin-leo-demo-block": "^0.1.0",
+        "vuepress-theme-antdocs": "^1.0.0"
     },
     "eslintConfig": {
         "root": true,
