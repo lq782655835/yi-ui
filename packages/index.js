@@ -38,6 +38,7 @@ import UTooltip from './u-tooltip'
 import UDivider from './u-divider'
 import UBackTop from './u-back-top'
 import UTransition from './u-transition.js'
+import { version } from '../package.json'
 
 import './assets/css/index.scss'
 
@@ -80,9 +81,16 @@ const install = function(Vue, opts = {}) {
     if (install.installed) return
 
     Object.keys(components).forEach(key => Vue.component(key, components[key]))
-    Vue.prototype.$toast = components['UToast'].toast
-    Vue.prototype.$confirm = components['UModal'].confirm
-    Vue.prototype.$alert = components['UModal'].alert
+    Vue.prototype.$toast = UToast.toast
+    Vue.prototype.$confirm = UModal.confirm
+    Vue.prototype.$alert = UModal.alert
+
+    Object.defineProperty(Vue.prototype, 'YIUI', {
+        configurable: false,
+        enumerable: false,
+        writable: false,
+        value: opts
+    })
 }
 
 // auto install
@@ -91,5 +99,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
+    version,
     install
 }

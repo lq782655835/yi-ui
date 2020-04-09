@@ -32,7 +32,7 @@ export default {
         open: { type: Boolean, default: false },
         trigger: { type: String, default: 'hover' },
         placement: { type: String, default: 'bottom-start' },
-        reference: HTMLElement, // 为了方便生成指令
+        reference: Object, // 为了方便生成指令
         offset: { type: Number, default: 0 },
         disabled: { type: Boolean, default: false },
         hoverDelay: { type: Number, default: 0 }

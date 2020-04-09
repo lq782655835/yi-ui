@@ -34,26 +34,26 @@ Vue.use(YIUI)
 ## Components
 
 * 基础组件
-    * [u-link](./src/components/u-link.vue)
-    * [u-button](./src/components/u-button.vue)
-    * [u-icon](./src/components/u-icon.vue)
-    * [u-layout](./src/components/u-layout.vue)
+    * [u-link](./packages/u-link.vue)
+    * [u-button](./packages/u-button.vue)
+    * [u-icon](./packages/u-icon.vue)
+    * [u-layout](./packages/u-layout.vue)
 * 表单组件
-    * [u-input/textarea](./src/components/u-input.vue)
-    * [u-select](./src/components/u-select.vue)
-    * [u-switch](./src/components/u-switch.vue)
-    * [u-radios/radio](./src/components/u-radio/u-radios.vue)
-    * [u-checkboxs/checkbox](./src/components/u-checkbox/u-checkboxs.vue)
-    * [u-form/u-form-item](./src/components/u-form/u-form.vue)
+    * [u-input/textarea](./packages/u-input.vue)
+    * [u-select](./packages/u-select.vue)
+    * [u-switch](./packages/u-switch.vue)
+    * [u-radios/radio](./packages/u-radio/u-radios.vue)
+    * [u-checkboxs/checkbox](./packages/u-checkbox/u-checkboxs.vue)
+    * [u-form/u-form-item](./packages/u-form/u-form.vue)
 * 实用组件
-    * [u-table/u-table-column](./src/components/u-table/u-table.vue)
-    * [u-pagination](./src/components/u-pagination.vue)
-    * [u-tabs/u-tab](./src/components/u-tab/u-tabs.vue)
-    * [u-crumb/u-crumb-item](./src/components/u-crumb/u-crumb.vue)
+    * [u-table/u-table-column](./packages/u-table/u-table.vue)
+    * [u-pagination](./packages/u-pagination.vue)
+    * [u-tabs/u-tab](./packages/u-tab/u-tabs.vue)
+    * [u-crumb/u-crumb-item](./packages/u-crumb/u-crumb.vue)
 * 弹出框组件
-    * [u-modal](./src/components/u-modal.vue)
-    * [u-toast](./src/components/u-toast.vue)
-    * [u-tooltip/u-popper](./src/components/u-tooltip.vue)
+    * [u-modal](./packages/u-modal.vue)
+    * [u-toast](./packages/u-toast.vue)
+    * [u-tooltip/u-popper](./packages/u-tooltip.vue)
 
 ## Preview
 
