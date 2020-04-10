@@ -1,6 +1,6 @@
 {
     "name": "yi-ui",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "repository": "lq782655835/yi-ui",
     "author": "springleo <782655835@qq.com>",
     "license": "MIT",
@@ -23,7 +23,7 @@
         "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "dev:docs": "vuepress dev docs",
         "build:docs": "vuepress build docs",
-        "release:lib": "npm run build && release-it",
+        "release:lib": "release-it",
         "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "lint": "vue-cli-service lint"
     },

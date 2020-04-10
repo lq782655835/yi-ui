@@ -1,6 +1,6 @@
 # 工具
 
-以下是使用到的开源工具：
+文档项目用到以下开源工具：
 
 ## 1. [vuepress-plugin-demo-block](https://github.com/lq782655835/vuepress-plugin-demo-block)
 
