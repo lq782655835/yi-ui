@@ -29,14 +29,14 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     },
     "lint-staged": {
         "packages/**/*.{vue,ts,tsx,js,jsx,json}": [
             "prettier --write",
-            "npm run lint",
-            "git add"
+            "npm run lint"
         ]
     },
     "release-it": {
@@ -54,6 +54,8 @@
         "vuepress": "^1.2.0"
     },
     "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
         "@vue/cli-plugin-babel": "^3.0.3",
         "@vue/cli-plugin-eslint": "^3.0.3",
         "@vue/cli-plugin-unit-jest": "^3.8.0",
