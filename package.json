@@ -25,6 +25,7 @@
         "build:docs": "vuepress build docs",
         "release:lib": "release-it",
         "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
+        "commit": "git add -A && git-cz",
         "lint": "vue-cli-service lint"
     },
     "husky": {
@@ -38,6 +39,11 @@
             "prettier --write",
             "npm run lint"
         ]
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     },
     "release-it": {
         "git": {
@@ -66,6 +72,8 @@
         "babel-eslint": "^10.0.1",
         "babel-jest": "^23.6.0",
         "chalk": "^2.4.2",
+        "commitizen": "^4.0.4",
+        "cz-conventional-changelog": "^3.1.0",
         "eslint": "^5.8.0",
         "eslint-plugin-vue": "^5.0.0-0",
         "gh-pages": "^2.0.1",
