@@ -26,6 +26,7 @@
         "release:lib": "release-it",
         "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "commit": "git add -A && git-cz",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "lint": "vue-cli-service lint"
     },
     "husky": {
@@ -73,6 +74,7 @@
         "babel-jest": "^23.6.0",
         "chalk": "^2.4.2",
         "commitizen": "^4.0.4",
+        "conventional-changelog-cli": "^2.0.31",
         "cz-conventional-changelog": "^3.1.0",
         "eslint": "^5.8.0",
         "eslint-plugin-vue": "^5.0.0-0",
