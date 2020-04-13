@@ -23,9 +23,9 @@
         "build": "vue-cli-service build --target lib --name YIUI ./packages/index.js",
         "dev:docs": "vuepress dev docs",
         "build:docs": "vuepress build docs",
-        "release:lib": "release-it",
-        "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "commit": "git add -A && git-cz",
+        "prepublish": "npm run build && release-it && npm run changelog",
+        "release:demo": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
         "lint": "vue-cli-service lint"
     },
