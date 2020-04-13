@@ -55,6 +55,50 @@ Vue.use(YIUI)
     * [u-toast](./packages/u-toast.vue)
     * [u-tooltip/u-popper](./packages/u-tooltip.vue)
 
+## 本地开发组件库
+
+``` sh
+npm install
+npm run dev
+```
+
+### 1. git commit msg 规范
+
+``` sh
+git commit -m 'feat: add feature'
+```
+* feat: 表示新增了一个功能
+* fix: 表示修复了一个 bug
+* docs: 表示只修改了文档
+* style: 表示修改格式、书写错误、空格等不影响代码逻辑的操作
+* refactor: 表示修改的代码不是新增功能也不是修改 bug，比如代码重构
+* perf: 表示修改了提升性能的代码
+* test: 表示修改了测试代码
+* build: 表示修改了编译配置文件
+* chore: 无 src 或 test 的操作
+* revert: 回滚操作
+
+### 2. 使用npm run commit提交
+
+``` sh
+npm run commit
+```
+
+### 3. 书写docs文档
+
+在docs下直接书写markdown文档即可，并在docs/.vuepress/config.js下配置目录。详见[vuepress配置](https://vuepress.vuejs.org/zh/config/)。
+
+发布到github可执行命令：
+``` sh
+npm run release:docs
+```
+
+## 组件库打包及发布
+
+``` sh
+npm publish
+```
+
 ## Preview
 
 ![image](https://user-images.githubusercontent.com/6310131/56558066-fbe16880-65cf-11e9-9940-07c7be20834c.png)

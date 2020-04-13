@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { shallowMount, createWrapper } from '@vue/test-utils'
 // global component
-import YIUI from '../lib'
+import YIUI from '../packages'
 Vue.use(YIUI)
 
 export const getWrapperFactory = (Ctor, propsData = {}, attachToDocument = true) => {

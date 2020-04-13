@@ -23,6 +23,7 @@
 </template>
 <script>
 export default {
+    name: 'u-tree',
     props: {
         data: { type: Object, required: true },
         labelField: { type: String, default: 'label' }

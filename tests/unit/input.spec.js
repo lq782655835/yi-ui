@@ -1,6 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import { UInput } from '../../packages'
-const Input = UInput
+import YIUI from '../../packages'
+const Input = YIUI.UInput
 
 describe('Input', () => {
     let wrapper

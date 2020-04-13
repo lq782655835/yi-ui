@@ -1,6 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import { USelect } from '../../packages'
-const Select = USelect
+import YIUI from '../../packages'
+const Select = YIUI.USelect
 
 describe('Select', () => {
     let wrapper

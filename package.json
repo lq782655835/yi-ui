@@ -1,6 +1,6 @@
 {
     "name": "yi-ui",
-    "version": "0.3.3",
+    "version": "0.3.2",
     "repository": "lq782655835/yi-ui",
     "author": "springleo <782655835@qq.com>",
     "license": "MIT",
@@ -24,10 +24,11 @@
         "dev:docs": "vuepress dev docs",
         "build:docs": "vuepress build docs",
         "commit": "git add -A && git-cz",
-        "prepublishOnly": "npm run build && release-it && npm run changelog",
         "release:lib": "release-it",
+        "prepublishOnly": "npm run build && release-it && npm run changelog",
         "release:docs": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+        "test": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint"
     },
     "husky": {

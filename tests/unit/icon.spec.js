@@ -1,6 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import { UIcon } from '../../packages'
-const Icon = UIcon
+import YIUI from '../../packages'
+const Icon = YIUI.UIcon
 
 describe('Icon', () => {
     let wrapper

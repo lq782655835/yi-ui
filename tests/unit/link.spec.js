@@ -1,6 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import { ULink } from '../../packages'
-const Link = ULink
+import YIUI from '../../packages'
+const Link = YIUI.ULink
 
 describe('Link', () => {
     let wrapper
@@ -58,7 +58,7 @@ describe('Link', () => {
             },
             true
         )
-        expect(wrapper.vm.$el.textContent).toBe(slot)
+        expect(wrapper.vm.$el.textContent.trim()).toBe(slot)
     })
 
     it('click', done => {

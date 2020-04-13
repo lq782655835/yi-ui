@@ -1,6 +1,6 @@
 import { getWrapperFactory, createVueWrapper, destroyWrapper } from '../util.js'
-import { UButton } from '../../packages'
-const Button = UButton
+import YIUI from '../../packages'
+const Button = YIUI.UButton
 
 describe('Button', () => {
     let wrapper
@@ -63,7 +63,7 @@ describe('Button', () => {
             },
             true
         )
-        expect(wrapper.vm.$el.textContent).toBe(slot)
+        expect(wrapper.vm.$el.textContent.trim()).toBe(slot)
     })
 
     it('click', done => {

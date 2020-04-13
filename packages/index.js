@@ -78,14 +78,12 @@ const components = {
 }
 
 const install = function(Vue, opts = {}) {
-    if (install.installed) return
-
     Object.keys(components).forEach(key => Vue.component(key, components[key]))
     Vue.prototype.$toast = UToast.toast
     Vue.prototype.$confirm = UModal.confirm
     Vue.prototype.$alert = UModal.alert
 
-    Object.defineProperty(Vue.prototype, 'YIUI', {
+    Object.defineProperty(Vue.prototype, '$YIUI', {
         configurable: false,
         enumerable: false,
         writable: false,
@@ -100,5 +98,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     version,
-    install
+    install,
+    ...components
 }
