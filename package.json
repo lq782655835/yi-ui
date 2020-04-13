@@ -28,7 +28,6 @@
         "prepublishOnly": "npm run build && release-it",
         "release:docs": "npm run build:docs && gh-pages -d docs/.vuepress/dist",
         "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-        "test": "vue-cli-service test:unit",
         "lint": "vue-cli-service lint"
     },
     "husky": {
