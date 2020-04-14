@@ -23,6 +23,17 @@ a:hover {
     box-sizing: border-box;
 }
 
+body,
+textarea,
+input,
+button,
+select,
+keygen,
+legend {
+    color: #666;
+    outline: 0;
+}
+
 // body {
 //     margin: 0;
 //     padding: 0;
