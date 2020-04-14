@@ -3,9 +3,6 @@ const path = require('path')
 module.exports = {
     title: '组件库文档中心',
     description: '轻量级组件库',
-    head: [
-        ['script', { src: 'https://unpkg.com/vue/dist/vue.js' }],
-    ],
     markdown: {
         lineNumbers: true,
     },
@@ -118,14 +115,7 @@ module.exports = {
         },
     },
     plugins: [
-        [
-            'leo-demo-block',
-            {
-                settings: {
-                    codepen: true
-                }
-            }
-        ],
+        'leo-demo-block',
         require('./plugin-yi-ui')
     ],
     chainWebpack: (config, isServer) => {
