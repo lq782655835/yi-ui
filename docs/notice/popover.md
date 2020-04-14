@@ -1,6 +1,7 @@
 # Popover
 
 ## 基本用法
+:::demo
 ```vue
 <template>
     <u-layout>
@@ -20,8 +21,11 @@
     </u-layout>
 </template>
 ```
+:::
 
 ## trigger
+
+:::demo
 ```vue
 <template>
     <u-layout>
@@ -51,8 +55,11 @@ export default {
 }
 </script>
 ```
+:::
 
 ## placement
+
+:::demo
 ```vue
 <template>
     <u-layout>
@@ -71,6 +78,7 @@ export default {
     </u-layout>
 </template>
 ```
+:::
 
 ## Popover Atrribute
 

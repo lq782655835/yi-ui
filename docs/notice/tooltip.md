@@ -1,6 +1,7 @@
 # Tooltip
 
 ## 基本用法
+:::demo
 ```vue
 <template>
     <div class="box">
@@ -80,9 +81,11 @@
   }
 </style>
 ```
+:::
 
-## 更多Content
+## content slot
 
+:::demo
 ```vue
 <template>
     <u-tooltip placement="top">
@@ -91,8 +94,10 @@
     </u-tooltip>
 </template>
 ```
+:::
 
 ## hide-delay
+
 :::demo
 ```vue
 <template>

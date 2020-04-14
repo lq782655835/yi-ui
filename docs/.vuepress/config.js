@@ -71,12 +71,44 @@ module.exports = {
                 title: '基础组件',
                 collapsable: false,
                 children: [
+                    'base/layout.md',
                     'base/link.md',
                     'base/button.md',
                     'base/icon.md',
-                    'base/input.md',
-                    'base/tabs.md',
-                    'base/steps.md',
+                ],
+            },
+            {
+                title: '表单组件',
+                collapsable: false,
+                children: [
+                    'form/input.md',
+                    'form/textarea.md',
+                    'form/select.md',
+                    'form/switch.md',
+                    'form/radios.md',
+                    'form/checkboxs.md',
+                    'form/form.md',
+                ],
+            },
+            {
+                title: '数据组件',
+                collapsable: false,
+                children: [
+                    'data/steps.md',
+                    'data/tabs.md',
+                    'data/table.md',
+                    'data/pagination.md',
+                    'data/crumb.md',
+                ],
+            },
+            {
+                title: '提示组件',
+                collapsable: false,
+                children: [
+                    'notice/modal.md',
+                    'notice/toast.md',
+                    'notice/tooltip.md',
+                    'notice/popover.md',
                 ],
             },
             {
@@ -86,8 +118,6 @@ module.exports = {
                     'other/divider.md',
                     'other/transition.md',
                     'other/backtop.md',
-                    'other/tooltip.md',
-                    'other/popover.md',
                 ]
             }
         ],
