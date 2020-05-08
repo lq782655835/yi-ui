@@ -34,6 +34,7 @@ import UToast from './u-toast'
 import UPopper from './u-popper'
 import UPopover from './u-popover'
 import UTooltip from './u-tooltip'
+import UMessage from './u-message'
 
 import UDivider from './u-divider'
 import UBackTop from './u-back-top'
@@ -74,7 +75,8 @@ const components = {
     UCrumbItem,
     UDivider,
     UBackTop,
-    UTransition
+    UTransition,
+    UMessage
 }
 
 const install = function(Vue, opts = {}) {
@@ -82,6 +84,7 @@ const install = function(Vue, opts = {}) {
     Vue.prototype.$toast = UToast.toast
     Vue.prototype.$confirm = UModal.confirm
     Vue.prototype.$alert = UModal.alert
+    Vue.prototype.$message = UMessage
 
     Object.defineProperty(Vue.prototype, '$YIUI', {
         configurable: false,

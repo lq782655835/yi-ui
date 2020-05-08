@@ -125,6 +125,10 @@
             <u-button @click="$toast('这是一个错误提示框', 'error')">错误toast</u-button>
         </d-component-item>
 
+        <d-component-item name="u-message">
+            <u-button @click="$message.success('这是一个message提示框')">success</u-button>
+        </d-component-item>
+
         <d-component-item name="u-modal/confirm/alert">
             <u-button @click="modalVisible = true">visible方式打开模态框</u-button>
             <u-button @click="confirmByJS">js api方式打开Confirm模态框</u-button>
